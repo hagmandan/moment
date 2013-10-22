@@ -19,7 +19,7 @@ exports["lang:de"] = {
     "parse" : function (test) {
         test.expect(96);
 
-        var tests = 'Januar Jan._Februar Febr._März Mrz._April Apr._Mai Mai_Juni Jun._Juli Jul._August Aug._September Sept._Oktober Okt._November Nov._Dezember Dez.'.split("_"), i;
+        var tests = 'Januar Jan_Februar Febr_März Mrz_April Apr_Mai Mai_Juni Jun_Juli Jul_August Aug_September Sept_Oktober Okt_November Nov_Dezember Dez'.split("_"), i;
         function equalTest(input, mmm, i) {
             test.equal(moment(input, mmm).month(), i, input + ' should be month ' + (i + 1));
         }
@@ -42,11 +42,11 @@ exports["lang:de"] = {
 
         var a = [
                 ['dddd, Do MMMM YYYY, h:mm:ss a',      'Sonntag, 14. Februar 2010, 3:25:50 pm'],
-                ['ddd, hA',                            'So., 3PM'],
-                ['M Mo MM MMMM MMM',                   '2 2. 02 Februar Febr.'],
+                ['ddd, hA',                            'So, 3PM'],
+                ['M Mo MM MMMM MMM',                   '2 2. 02 Februar Febr'],
                 ['YYYY YY',                            '2010 10'],
                 ['D Do DD',                            '14 14. 14'],
-                ['d do dddd ddd dd',                   '0 0. Sonntag So. So'],
+                ['d do dddd ddd dd',                   '0 0. Sonntag So So'],
                 ['DDD DDDo DDDD',                      '45 45. 045'],
                 ['w wo ww',                            '6 6. 06'],
                 ['h hh',                               '3 03'],
@@ -60,9 +60,9 @@ exports["lang:de"] = {
                 ['LLL',                                '14. Februar 2010 15:25 Uhr'],
                 ['LLLL',                               'Sonntag, 14. Februar 2010 15:25 Uhr'],
                 ['l',                                  '14.2.2010'],
-                ['ll',                                 '14. Febr. 2010'],
-                ['lll',                                '14. Febr. 2010 15:25 Uhr'],
-                ['llll',                               'So., 14. Febr. 2010 15:25 Uhr']
+                ['ll',                                 '14. Febr 2010'],
+                ['lll',                                '14. Febr 2010 15:25 Uhr'],
+                ['llll',                               'So, 14. Febr 2010 15:25 Uhr']
             ],
             b = moment(new Date(2010, 1, 14, 15, 25, 50, 125)),
             i;
@@ -115,7 +115,7 @@ exports["lang:de"] = {
     "format month" : function (test) {
         test.expect(12);
 
-        var expected = 'Januar Jan._Februar Febr._März Mrz._April Apr._Mai Mai_Juni Jun._Juli Jul._August Aug._September Sept._Oktober Okt._November Nov._Dezember Dez.'.split("_"), i;
+        var expected = 'Januar Jan_Februar Febr_März Mrz_April Apr_Mai Mai_Juni Jun_Juli Jul_August Aug_September Sept_Oktober Okt_November Nov_Dezember Dez'.split("_"), i;
         for (i = 0; i < expected.length; i++) {
             test.equal(moment([2011, i, 1]).format('MMMM MMM'), expected[i], expected[i]);
         }
@@ -125,7 +125,7 @@ exports["lang:de"] = {
     "format week" : function (test) {
         test.expect(7);
 
-        var expected = 'Sonntag So. So_Montag Mo. Mo_Dienstag Di. Di_Mittwoch Mi. Mi_Donnerstag Do. Do_Freitag Fr. Fr_Samstag Sa. Sa'.split("_"), i;
+        var expected = 'Sonntag So So_Montag Mo Mo_Dienstag Di Di_Mittwoch Mi Mi_Donnerstag Do Do_Freitag Fr Fr_Samstag Sa Sa'.split("_"), i;
         for (i = 0; i < expected.length; i++) {
             test.equal(moment([2011, 0, 2 + i]).format('dddd ddd dd'), expected[i], expected[i]);
         }
@@ -349,9 +349,9 @@ exports["lang:de"] = {
     },
     
     "returns the name of the language" : function (test) {
-        test.expect(1);
-        
-        test.equal(require('../../lang/de'), 'de', "module should export de");
+        if (typeof module !== 'undefied' && module.exports) {
+            test.equal(require('../../lang/de'), 'de', "module should export de");
+        }
         
         test.done();
     }

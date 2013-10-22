@@ -38,7 +38,7 @@
 
     return moment.lang('pl', {
         months : function (momentToFormat, format) {
-            if (/D MMMM/.test(format)) {
+            if (/D MMMM/.test(format) || /MMMM D/i.test(format)) {
                 return monthsSubjective[momentToFormat.month()];
             } else {
                 return monthsNominative[momentToFormat.month()];

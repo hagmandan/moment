@@ -45,8 +45,8 @@ exports["lang:ms-my"] = {
         test.expect(22);
 
         var a = [
-                ['dddd, MMMM Do YYYY, h:mm:ss a',      'Ahad, Februari 14 2010, 3:25:50 petang'],
-                ['ddd, hA',                            'Ahd, 3petang'],
+                ['dddd, MMMM Do YYYY, h:mm:ss a',      'Ahad, Februari 14 2010, 3:25:50 PM'],
+                ['ddd, hA',                            'Ahd, 3PM'],
                 ['M Mo MM MMMM MMM',                   '2 2 02 Februari Feb'],
                 ['YYYY YY',                            '2010 10'],
                 ['D Do DD',                            '14 14 14'],
@@ -57,7 +57,7 @@ exports["lang:ms-my"] = {
                 ['H HH',                               '15 15'],
                 ['m mm',                               '25 25'],
                 ['s ss',                               '50 50'],
-                ['a A',                                'petang petang'],
+                ['a A',                                'PM PM'],
                 ['[hari] [ke] DDDo [tahun] ini', 'hari ke 45 tahun ini'],
                 ['L',                                  '14/02/2010'],
                 ['LL',                                 '14 Februari 2010'],
@@ -376,9 +376,9 @@ exports["lang:ms-my"] = {
     },
     
     "returns the name of the language" : function (test) {
-        test.expect(1);
-        
-        test.equal(require('../../lang/ms-my'), 'ms-my', "module should export ms-my");
+        if (typeof module !== 'undefied' && module.exports) {
+            test.equal(require('../../lang/ms-my'), 'ms-my', "module should export ms-my");
+        }
         
         test.done();
     }

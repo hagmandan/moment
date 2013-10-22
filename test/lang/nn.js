@@ -19,7 +19,7 @@ exports["lang:nn"] = {
     "parse" : function (test) {
         test.expect(96);
 
-        var tests = 'januar jan_februar feb_mars mar_april apr_mai mai_juni jun_juli jul_august aug_september sep_oktober okt_november nov_desember des'.split("_"), i;
+        var tests = 'januar jan._februar feb._mars mar._april apr._mai mai._juni jun._juli jul._august aug._september sep._oktober okt._november nov._desember des.'.split("_"), i;
         function equalTest(input, mmm, i) {
             test.equal(moment(input, mmm).month(), i, input + ' should be month ' + (i + 1));
         }
@@ -41,12 +41,12 @@ exports["lang:nn"] = {
         test.expect(22);
 
         var a = [
-                ['dddd, MMMM Do YYYY, h:mm:ss a',      'sundag, februar 14. 2010, 3:25:50 pm'],
-                ['ddd, hA',                            'sun, 3PM'],
-                ['M Mo MM MMMM MMM',                   '2 2. 02 februar feb'],
+                ['dddd, MMMM Do YYYY, h:mm:ss a',      'søndag, februar 14. 2010, 3:25:50 pm'],
+                ['ddd, hA',                            'sø., 3PM'],
+                ['M Mo MM MMMM MMM',                   '2 2. 02 februar feb.'],
                 ['YYYY YY',                            '2010 10'],
                 ['D Do DD',                            '14 14. 14'],
-                ['d do dddd ddd dd',                   '0 0. sundag sun su'],
+                ['d do dddd ddd dd',                   '0 0. søndag sø. S'],
                 ['DDD DDDo DDDD',                      '45 45. 045'],
                 ['w wo ww',                            '6 6. 06'],
                 ['h hh',                               '3 03'],
@@ -58,11 +58,11 @@ exports["lang:nn"] = {
                 ['L',                                  '14.02.2010'],
                 ['LL',                                 '14 februar 2010'],
                 ['LLL',                                '14 februar 2010 15:25'],
-                ['LLLL',                               'sundag 14 februar 2010 15:25'],
+                ['LLLL',                               'søndag 14 februar 2010 15:25'],
                 ['l',                                  '14.2.2010'],
-                ['ll',                                 '14 feb 2010'],
-                ['lll',                                '14 feb 2010 15:25'],
-                ['llll',                               'sun 14 feb 2010 15:25']
+                ['ll',                                 '14 feb. 2010'],
+                ['lll',                                '14 feb. 2010 15:25'],
+                ['llll',                               'sø. 14 feb. 2010 15:25']
             ],
             b = moment(new Date(2010, 1, 14, 15, 25, 50, 125)),
             i;
@@ -115,7 +115,7 @@ exports["lang:nn"] = {
     "format month" : function (test) {
         test.expect(12);
 
-        var expected = 'januar jan_februar feb_mars mar_april apr_mai mai_juni jun_juli jul_august aug_september sep_oktober okt_november nov_desember des'.split("_"), i;
+        var expected = 'januar jan._februar feb._mars mar._april apr._mai mai._juni jun._juli jul._august aug._september sep._oktober okt._november nov._desember des.'.split("_"), i;
         for (i = 0; i < expected.length; i++) {
             test.equal(moment([2011, i, 1]).format('MMMM MMM'), expected[i], expected[i]);
         }
@@ -125,7 +125,7 @@ exports["lang:nn"] = {
     "format week" : function (test) {
         test.expect(7);
 
-        var expected = 'sundag sun su_måndag mån må_tysdag tys ty_onsdag ons on_torsdag tor to_fredag fre fr_laurdag lau lø'.split("_"), i;
+        var expected = 'søndag sø. S_måndag må. M_tysdag ty. T_onsdag on. O_torsdag to. T_fredag fr. F_laurdag la. L'.split("_"), i;
         for (i = 0; i < expected.length; i++) {
             test.equal(moment([2011, 0, 2 + i]).format('dddd ddd dd'), expected[i], expected[i]);
         }
@@ -354,9 +354,9 @@ exports["lang:nn"] = {
     },
     
     "returns the name of the language" : function (test) {
-        test.expect(1);
-        
-        test.equal(require('../../lang/nn'), 'nn', "module should export nn");
+        if (typeof module !== 'undefied' && module.exports) {
+            test.equal(require('../../lang/nn'), 'nn', "module should export nn");
+        }
         
         test.done();
     }

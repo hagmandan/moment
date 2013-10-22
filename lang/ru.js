@@ -35,11 +35,11 @@
 
     function monthsCaseReplace(m, format) {
         var months = {
-            'nominative': 'январь_февраль_март_апрель_май_июнь_июль_август_сентябрь_октябрь_ноябрь_декабрь'.split('_'),
+            'nominative': 'Январь_Февраль_Март_Апрель_Май_Июнь_Июль_Август_Сентябрь_Октябрь_Ноябрь_Декабрь'.split('_'),
             'accusative': 'января_февраля_марта_апреля_мая_июня_июля_августа_сентября_октября_ноября_декабря'.split('_')
         },
 
-        nounCase = (/D[oD]? *MMMM?/).test(format) ?
+        nounCase = (/D[oD]? *MMMM?|MMMM? *D[oD]?|D{1,2}? *MMMM?|MMMM? *D{1,3}?/i).test(format) ?
             'accusative' :
             'nominative';
 
@@ -48,11 +48,11 @@
 
     function monthsShortCaseReplace(m, format) {
         var monthsShort = {
-            'nominative': 'янв_фев_мар_апр_май_июнь_июль_авг_сен_окт_ноя_дек'.split('_'),
-            'accusative': 'янв_фев_мар_апр_мая_июня_июля_авг_сен_окт_ноя_дек'.split('_')
+            'nominative': 'Янв._Февр._Март_Апр._Май_Июнь_Июль_Авг._Сент._Окт._Нояб._Дек.'.split('_'),
+            'accusative': 'янв._февр._марта_апр._мая_июня_июля_авг._сент._окт._нояб._дек.'.split('_')
         },
 
-        nounCase = (/D[oD]? *MMMM?/).test(format) ?
+        nounCase = (/D[oD]? *MMM?|MMM? *D[oD]?/i).test(format) ?
             'accusative' :
             'nominative';
 
@@ -61,8 +61,8 @@
 
     function weekdaysCaseReplace(m, format) {
         var weekdays = {
-            'nominative': 'воскресенье_понедельник_вторник_среда_четверг_пятница_суббота'.split('_'),
-            'accusative': 'воскресенье_понедельник_вторник_среду_четверг_пятницу_субботу'.split('_')
+            'nominative': 'Воскресенье_Понедельник_Вторник_Среда_Четверг_Пятница_Суббота'.split('_'),
+            'accusative': 'воскресенье_понедельник_вторник_среда_четверг_пятница_суббота'.split('_')
         },
 
         nounCase = (/\[ ?[Вв] ?(?:прошлую|следующую)? ?\] ?dddd/).test(format) ?

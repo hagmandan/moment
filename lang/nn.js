@@ -13,10 +13,10 @@
 }(function (moment) {
     return moment.lang('nn', {
         months : "januar_februar_mars_april_mai_juni_juli_august_september_oktober_november_desember".split("_"),
-        monthsShort : "jan_feb_mar_apr_mai_jun_jul_aug_sep_okt_nov_des".split("_"),
-        weekdays : "sundag_måndag_tysdag_onsdag_torsdag_fredag_laurdag".split("_"),
-        weekdaysShort : "sun_mån_tys_ons_tor_fre_lau".split("_"),
-        weekdaysMin : "su_må_ty_on_to_fr_lø".split("_"),
+        monthsShort : "jan._feb._mar._apr._mai._jun._jul._aug._sep._okt._nov._des.".split("_"),
+        weekdays : "søndag_måndag_tysdag_onsdag_torsdag_fredag_laurdag".split("_"),
+        weekdaysShort : "sø._må._ty._on._to._fr._la.".split("_"),
+        weekdaysMin : "S_M_T_O_T_F_L".split("_"),
         longDateFormat : {
             LT : "HH:mm",
             L : "DD.MM.YYYY",

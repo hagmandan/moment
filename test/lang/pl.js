@@ -41,7 +41,7 @@ exports["lang:pl"] = {
         test.expect(22);
 
         var a = [
-                ['dddd, MMMM Do YYYY, h:mm:ss a',      'niedziela, luty 14. 2010, 3:25:50 pm'],
+                ['dddd, MMMM Do YYYY, h:mm:ss a',      'niedziela, lutego 14. 2010, 3:25:50 pm'],
                 ['ddd, hA',                            'nie, 3PM'],
                 ['M Mo MM MMMM MMM',                   '2 2. 02 luty lut'],
                 ['YYYY YY',                            '2010 10'],
@@ -373,9 +373,9 @@ exports["lang:pl"] = {
     },
     
     "returns the name of the language" : function (test) {
-        test.expect(1);
-        
-        test.equal(require('../../lang/pl'), 'pl', "module should export pl");
+        if (typeof module !== 'undefied' && module.exports) {
+            test.equal(require('../../lang/pl'), 'pl', "module should export pl");
+        }
         
         test.done();
     }

@@ -39,7 +39,7 @@ exports["lang:cs"] = {
     "format" : function (test) {
         test.expect(22);
         var a = [
-                ['dddd, MMMM Do YYYY, h:mm:ss',  'neděle, únor 14. 2010, 3:25:50'],
+                ['dddd, MMMM Do YYYY, h:mm:ss',  'neděle, února 14. 2010, 3:25:50'],
                 ['ddd, h',                       'ne, 3'],
                 ['M Mo MM MMMM MMM',             '2 2. 02 únor úno'],
                 ['YYYY YY',                      '2010 10'],
@@ -54,9 +54,9 @@ exports["lang:cs"] = {
                 ['a A',                          'pm PM'],
                 ['DDDo [den v roce]',            '45. den v roce'],
                 ['L',                            '14.02.2010'],
-                ['LL',                           '14. únor 2010'],
-                ['LLL',                          '14. únor 2010 15:25'],
-                ['LLLL',                         'neděle 14. únor 2010 15:25'],
+                ['LL',                           '14. února 2010'],
+                ['LLL',                          '14. února 2010 15:25'],
+                ['LLLL',                         'neděle 14. února 2010 15:25'],
                 ['l',                            '14.2.2010'],
                 ['ll',                           '14. úno 2010'],
                 ['lll',                          '14. úno 2010 15:25'],
@@ -440,9 +440,9 @@ exports["lang:cs"] = {
     },
     
     "returns the name of the language" : function (test) {
-        test.expect(1);
-        
-        test.equal(require('../../lang/cs'), 'cs', "module should export cs");
+        if (typeof module !== 'undefied' && module.exports) {
+            test.equal(require('../../lang/cs'), 'cs', "module should export cs");
+        }
         
         test.done();
     }

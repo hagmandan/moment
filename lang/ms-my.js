@@ -25,14 +25,19 @@
             LLLL : "dddd, D MMMM YYYY [pukul] LT"
         },
         meridiem : function (hours, minutes, isLower) {
-            if (hours < 11) {
-                return 'pagi';
-            } else if (hours < 15) {
-                return 'tengahari';
-            } else if (hours < 19) {
-                return 'petang';
+            // if (hours < 11) {
+            //     return 'pagi';
+            // } else if (hours < 15) {
+            //     return 'tengahari';
+            // } else if (hours < 19) {
+            //     return 'petang';
+            // } else {
+            //     return 'malam';
+            // }
+            if (hours >= 0 && hours < 11) {
+                return 'AM';
             } else {
-                return 'malam';
+                return 'PM';
             }
         },
         calendar : {

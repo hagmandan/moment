@@ -19,7 +19,7 @@ exports["lang:ru"] = {
     "parse" : function (test) {
         test.expect(96);
 
-        var tests = 'январь янв_февраль фев_март мар_апрель апр_май май_июнь июнь_июль июль_август авг_сентябрь сен_октябрь окт_ноябрь ноя_декабрь дек'.split("_"), i;
+        var tests = 'Январь Янв._Февраль Февр._Март Март_Апрель Апр._Май Май_Июнь Июнь_Июль Июль_Август Авг._Сентябрь Сент._Октябрь Окт._Ноябрь Нояб._Декабрь Дек.'.split("_"), i;
         function equalTest(input, mmm, i) {
             test.equal(moment(input, mmm).month(), i, input + ' should be month ' + (i + 1));
         }
@@ -46,12 +46,12 @@ exports["lang:ru"] = {
         test.expect(22);
 
         var a = [
-                ['dddd, Do MMMM YYYY, HH:mm:ss',       'воскресенье, 14-го февраля 2010, 15:25:50'],
+                ['dddd, Do MMMM YYYY, HH:mm:ss',       'Воскресенье, 14-го февраля 2010, 15:25:50'],
                 ['ddd, h A',                           'вс, 3 дня'],
-                ['M Mo MM MMMM MMM',                   '2 2-й 02 февраль фев'],
+                ['M Mo MM MMMM MMM',                   '2 2-й 02 Февраль Февр.'],
                 ['YYYY YY',                            '2010 10'],
                 ['D Do DD',                            '14 14-го 14'],
-                ['d do dddd ddd dd',                   '0 0-й воскресенье вс вс'],
+                ['d do dddd ddd dd',                   '0 0-й Воскресенье вс вс'],
                 ['DDD DDDo DDDD',                      '45 45-й 045'],
                 ['w wo ww',                            '7 7-я 07'],
                 ['h hh',                               '3 03'],
@@ -63,11 +63,11 @@ exports["lang:ru"] = {
                 ['L',                                  '14.02.2010'],
                 ['LL',                                 '14 февраля 2010 г.'],
                 ['LLL',                                '14 февраля 2010 г., 15:25'],
-                ['LLLL',                               'воскресенье, 14 февраля 2010 г., 15:25'],
+                ['LLLL',                               'Воскресенье, 14 февраля 2010 г., 15:25'],
                 ['l',                                  '14.2.2010'],
-                ['ll',                                 '14 фев 2010 г.'],
-                ['lll',                                '14 фев 2010 г., 15:25'],
-                ['llll',                               'вс, 14 фев 2010 г., 15:25']
+                ['ll',                                 '14 февр. 2010 г.'],
+                ['lll',                                '14 февр. 2010 г., 15:25'],
+                ['llll',                               'вс, 14 февр. 2010 г., 15:25']
             ],
             b = moment(new Date(2010, 1, 14, 15, 25, 50, 125)),
             i;
@@ -135,7 +135,7 @@ exports["lang:ru"] = {
     "format month" : function (test) {
         test.expect(12);
 
-        var expected = 'январь янв_февраль фев_март мар_апрель апр_май май_июнь июнь_июль июль_август авг_сентябрь сен_октябрь окт_ноябрь ноя_декабрь дек'.split("_"), i;
+        var expected = 'Январь Янв._Февраль Февр._Март Март_Апрель Апр._Май Май_Июнь Июнь_Июль Июль_Август Авг._Сентябрь Сент._Октябрь Окт._Ноябрь Нояб._Декабрь Дек.'.split("_"), i;
         for (i = 0; i < expected.length; i++) {
             test.equal(moment([2011, i, 1]).format('MMMM MMM'), expected[i], expected[i]);
         }
@@ -146,7 +146,7 @@ exports["lang:ru"] = {
         test.expect(24);
 
         var months = {
-            'nominative': 'январь_февраль_март_апрель_май_июнь_июль_август_сентябрь_октябрь_ноябрь_декабрь'.split('_'),
+            'nominative': 'Январь_Февраль_Март_Апрель_Май_Июнь_Июль_Август_Сентябрь_Октябрь_Ноябрь_Декабрь'.split('_'),
             'accusative': 'января_февраля_марта_апреля_мая_июня_июля_августа_сентября_октября_ноября_декабря'.split('_')
         }, i;
         for (i = 0; i < 12; i++) {
@@ -160,8 +160,8 @@ exports["lang:ru"] = {
         test.expect(24);
 
         var monthsShort = {
-            'nominative': 'янв_фев_мар_апр_май_июнь_июль_авг_сен_окт_ноя_дек'.split('_'),
-            'accusative': 'янв_фев_мар_апр_мая_июня_июля_авг_сен_окт_ноя_дек'.split('_')
+            'nominative': 'Янв._Февр._Март_Апр._Май_Июнь_Июль_Авг._Сент._Окт._Нояб._Дек.'.split('_'),
+            'accusative': 'янв._февр._марта_апр._мая_июня_июля_авг._сент._окт._нояб._дек.'.split('_')
         }, i;
         for (i = 0; i < 12; i++) {
             test.equal(moment([2011, i, 1]).format('D MMM'), '1 ' + monthsShort.accusative[i], '1 ' + monthsShort.accusative[i]);
@@ -173,7 +173,7 @@ exports["lang:ru"] = {
     "format week" : function (test) {
         test.expect(7);
 
-        var expected = 'воскресенье вс вс_понедельник пн пн_вторник вт вт_среда ср ср_четверг чт чт_пятница пт пт_суббота сб сб'.split("_"), i;
+        var expected = 'Воскресенье вс вс_Понедельник пн пн_Вторник вт вт_Среда ср ср_Четверг чт чт_Пятница пт пт_Суббота сб сб'.split("_"), i;
         for (i = 0; i < expected.length; i++) {
             test.equal(moment([2011, 0, 2 + i]).format('dddd ddd dd'), expected[i], expected[i]);
         }
@@ -419,9 +419,9 @@ exports["lang:ru"] = {
     },
     
     "returns the name of the language" : function (test) {
-        test.expect(1);
-        
-        test.equal(require('../../lang/ru'), 'ru', "module should export ru");
+        if (typeof module !== 'undefied' && module.exports) {
+            test.equal(require('../../lang/ru'), 'ru', "module should export ru");
+        }
         
         test.done();
     }

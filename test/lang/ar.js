@@ -348,9 +348,9 @@ exports["lang:ar"] = {
     },
     
     "returns the name of the language" : function (test) {
-        test.expect(1);
-        
-        test.equal(require('../../lang/ar'), 'ar', "module should export ar");
+        if (typeof module !== 'undefied' && module.exports) {
+            test.equal(require('../../lang/ar'), 'ar', "module should export ar");
+        }
         
         test.done();
     }

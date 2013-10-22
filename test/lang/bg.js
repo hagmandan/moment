@@ -363,10 +363,10 @@ exports["lang:bg"] = {
     },
 
     "returns the name of the language" : function (test) {
-        test.expect(1);
-
-        test.equal(require('../../lang/bg'), 'bg', "module should export bg");
-
+        if (typeof module !== 'undefied' && module.exports) {
+            test.equal(require('../../lang/bg'), 'bg', "module should export bg");
+        }
+        
         test.done();
     }
 };

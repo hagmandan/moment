@@ -351,10 +351,10 @@ exports["lang:en-gb"] = {
     },
 
     "returns the name of the language" : function (test) {
-        test.expect(1);
-
-        test.equal(require('../../lang/en-gb'), 'en-gb', "module should export en-gb");
-
+        if (typeof module !== 'undefied' && module.exports) {
+            test.equal(require('../../lang/en-gb'), 'en-gb', "module should export en-gb");
+        }
+        
         test.done();
     }
 };
