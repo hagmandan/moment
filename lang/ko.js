@@ -24,6 +24,20 @@
             LLL : "YYYY년 MMMM D일 LT",
             LLLL : "YYYY년 MMMM D일 dddd LT"
         },
+        longDateFormatMD : {
+            UT: "A h시 mm분",
+            U: "MM.DD",
+            UU: "MMMM D일",
+            UUU: "MMMM D일 UT",
+            UUUU: "MMMM D일 dddd UT"
+        },
+        longDateFormatMY : {
+            RT: "A h시 mm분",
+            R: "YYYY.MM.",
+            RR: "YYYY년 MMMM",
+            RRR: "YYYY년 MMMM RT",
+            RRRR: "YYYY년 MMMM dddd RT"
+        },
         meridiem : function (hour, minute, isUpper) {
             return hour < 12 ? '오전' : '오후';
         },

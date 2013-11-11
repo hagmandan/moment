@@ -19,10 +19,24 @@
         weekdaysMin : "S_M_T_O_T_F_L".split("_"),
         longDateFormat : {
             LT : "HH:mm",
-            L : "DD.MM.YYYY",
-            LL : "D MMMM YYYY",
-            LLL : "D MMMM YYYY LT",
-            LLLL : "dddd D MMMM YYYY LT"
+            L : "YYYY-MM-DD",
+            LL : "YYYY MMMM DD",
+            LLL : "YYYY MMMM DD LT",
+            LLLL : "dddd, YYYY MMMM DD LT"
+        },
+        longDateFormatMD : {
+            UT: "HH:mm",
+            U: "MM-DD",
+            UU: "MMMM DD",
+            UUU: "MMMM DD UT",
+            UUUU: "dddd, MMMM DD UT"
+        },
+        longDateFormatMY : {
+            RT: "HH:mm",
+            R: "YYYY-MM",
+            RR: "YYYY MMMM",
+            RRR: "YYYY MMMM RT",
+            RRRR: "dddd, YYYY MMMM RT"
         },
         calendar : {
             sameDay: '[I dag klokka] LT',

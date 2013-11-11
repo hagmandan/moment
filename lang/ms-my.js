@@ -18,11 +18,25 @@
         weekdaysShort : "Ahd_Isn_Sel_Rab_Kha_Jum_Sab".split("_"),
         weekdaysMin : "Ah_Is_Sl_Rb_Km_Jm_Sb".split("_"),
         longDateFormat : {
-            LT : "HH.mm",
+            LT : "h:mm a",
             L : "DD/MM/YYYY",
-            LL : "D MMMM YYYY",
-            LLL : "D MMMM YYYY [pukul] LT",
-            LLLL : "dddd, D MMMM YYYY [pukul] LT"
+            LL : "DD MMMM YYYY",
+            LLL : "DD MMMM YYYY [pukul] LT",
+            LLLL : "dddd, DD MMMM YYYY [pukul] LT"
+        },
+        longDateFormatMD : {
+            UT: "h:mm a",
+            U: "DD/MM",
+            UU: "DD MMMM",
+            UUU: "DD MMMM UT",
+            UUUU: "dddd, DD MMMM UT"
+        },
+        longDateFormatMY : {
+            RT: "h:mm a",
+            R: "MM/YYYY",
+            RR: "MMMM YYYY",
+            RRR: "MMMM YYYY RT",
+            RRRR: "dddd, MMMM YYYY RT"
         },
         meridiem : function (hours, minutes, isLower) {
             // if (hours < 11) {

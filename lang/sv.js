@@ -24,6 +24,20 @@
             LLL : "D MMMM YYYY LT",
             LLLL : "dddd D MMMM YYYY LT"
         },
+        longDateFormatMD : {
+            UT: "HH:mm",
+            U: "MM-DD",
+            UU: "D MMMM",
+            UUU: "D MMMM UT",
+            UUUU: "dddd D MMMM UT"
+        },
+        longDateFormatMY : {
+            RT: "HH:mm",
+            R: "YYYY-MM",
+            RR: "MMMM YYYY",
+            RRR: "MMMM YYYY RT",
+            RRRR: "dddd MMMM YYYY RT"
+        },
         calendar : {
             sameDay: '[Idag] LT',
             nextDay: '[Imorgon] LT',

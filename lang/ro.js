@@ -22,8 +22,22 @@
             LT : "H:mm",
             L : "DD/MM/YYYY",
             LL : "D MMMM YYYY",
-            LLL : "D MMMM YYYY H:mm",
-            LLLL : "dddd, D MMMM YYYY H:mm"
+            LLL : "D MMMM YYYY LT",
+            LLLL : "dddd, D MMMM YYYY LT"
+        },
+        longDateFormatMD : {
+            UT: "H:mm",
+            U: "DD/MM",
+            UU: "D MMMM",
+            UUU: "D MMMM UT",
+            UUUU: "dddd, D MMMM UT"
+        },
+        longDateFormatMY : {
+            RT: "H:mm",
+            R: "MM/YYYY",
+            RR: "MMMM YYYY",
+            RRR: "MMMM YYYY LT",
+            RRRR: "dddd, MMMM YYYY LT"
         },
         calendar : {
             sameDay: "[azi la] LT",

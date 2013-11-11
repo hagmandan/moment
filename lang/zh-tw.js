@@ -28,6 +28,20 @@
             lll : "YYYY年MMMD日LT",
             llll : "YYYY年MMMD日ddddLT"
         },
+        longDateFormatMD : {
+            UT: "Ah點mm",
+            U: "MMMD日",
+            UU: "MMMD日",
+            UUU: "MMMD日UT",
+            UUUU: "MMMD日ddddUT"
+        },
+        longDateFormatMY : {
+            RT: "Ah點mm",
+            R: "YYYY年MMM",
+            RR: "YYYY年MMM",
+            RRR: "YYYY年MMMLT",
+            RRRR: "YYYY年MMMddddLT"
+        },
         meridiem : function (hour, minute, isLower) {
             var hm = hour * 100 + minute;
             if (hm < 900) {

@@ -82,9 +82,23 @@
         longDateFormat : {
             LT : "HH:mm",
             L : "DD.MM.YYYY",
-            LL : "D MMMM YYYY г.",
-            LLL : "D MMMM YYYY г., LT",
-            LLLL : "dddd, D MMMM YYYY г., LT"
+            LL : "D MMMM YYYY [г].",
+            LLL : "D MMMM YYYY [г]., LT",
+            LLLL : "dddd, D MMMM YYYY [г]., LT"
+        },
+        longDateFormatMD : {
+            UT: "HH:mm",
+            U: "DD.MM.",
+            UU: "D MMMM [г].",
+            UUU: "D MMMM [г]., UT",
+            UUUU: "dddd, D MMMM [г]., UT"
+        },
+        longDateFormatMY : {
+            RT: "HH:mm",
+            R: "MM.YYYY",
+            RR: "MMMM YYYY [г].",
+            RRR: "MMMM YYYY [г]., RT",
+            RRRR: "dddd, MMMM YYYY [г]., RT"
         },
         calendar : {
             sameDay: '[Сегодня в] LT',

@@ -94,10 +94,24 @@
         weekdaysMin : "ne_po_út_st_čt_pá_so".split("_"),
         longDateFormat : {
             LT: "H:mm",
-            L : "DD.MM.YYYY",
-            LL : "D. MMMM YYYY",
-            LLL : "D. MMMM YYYY LT",
+            L : "D.MM.YYYY",
+            LL : "DD. MMMM YYYY",
+            LLL : "DD. MMMM YYYY LT",
             LLLL : "dddd D. MMMM YYYY LT"
+        },
+        longDateFormatMD : {
+            UT: "H:mm",
+            U: "D.MM",
+            UU: "DD. MMMM",
+            UUU: "DD. MMMM  UT",
+            UUUU: "dddd D. MMMM UT"
+        },
+        longDateFormatMY : {
+            RT: "H:mm",
+            R: "MM.YYYY",
+            RR: "MMMM YYYY",
+            RRR: "MMMM YYYY RT",
+            RRRR: "dddd MMMM YYYY RT"
         },
         calendar : {
             sameDay: "[dnes v] LT",

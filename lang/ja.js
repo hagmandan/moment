@@ -24,6 +24,20 @@
             LLL : "YYYY年M月D日LT",
             LLLL : "YYYY年M月D日LT dddd"
         },
+        longDateFormatMD : {
+            UT: "Ah時m分",
+            U: "MM/DD",
+            UU: "M月D日",
+            UUU: "M月D日UT",
+            UUUU: "M月D日UT dddd"
+        },
+        longDateFormatMY : {
+            RT: "Ah時m分",
+            R: "YYYY/MM",
+            RR: "YYYY年M月",
+            RRR: "YYYY年M月RT",
+            RRRR: "YYYY年M月RT dddd"
+        },
         meridiem : function (hour, minute, isLower) {
             if (hour < 12) {
                 return "午前";

@@ -40,6 +40,8 @@
         // format tokens
         formattingTokens = /(\[[^\[]*\])|(\\)?(Mo|MM?M?M?|Do|DDDo|DD?D?D?|ddd?d?|do?|w[o|w]?|W[o|W]?|YYYYY|YYYY|YY|gg(ggg?)?|GG(GGG?)?|e|E|a|A|hh?|HH?|mm?|ss?|SS?S?|X|zz?|ZZ?|.)/g,
         localFormattingTokens = /(\[[^\[]*\])|(\\)?(LT|LL?L?L?|l{1,4})/g,
+        localFormattingTokensMD = /(\[[^\[]*\])|(\\)?(UT|UU?U?U?|u{1,4})/g,
+        localFormattingTokensMY = /(\[[^\[]*\])|(\\)?(RT|RR?R?R?|r{1,4})/g,
 
         // parsing token regexes
         parseTokenOneOrTwoDigits = /\d\d?/, // 0 - 99
@@ -659,6 +661,20 @@
             LLL : "MMMM D YYYY LT",
             LLLL : "dddd, MMMM D YYYY LT"
         },
+        _longDateFormat_MD : {
+            UT : "h:mm A",
+            U : "MM/DD",
+            UU : "MMM D",
+            UUU : "MMMM D",
+            UUUU : "dddd, MMMM D UT"
+        },
+        _longDateFormat_MY : {
+            RT : "h:mm A",
+            R : "MM/YYYY",
+            RR : "MMM YYYY",
+            RRR : "MMMM YYYY",
+            RRRR : "dddd, MMMM YYYY RT"
+        },
         longDateFormat : function (key) {
             var output = this._longDateFormat[key];
             if (!output && this._longDateFormat[key.toUpperCase()]) {
@@ -666,6 +682,26 @@
                     return val.slice(1);
                 });
                 this._longDateFormat[key] = output;
+            }
+            return output;
+        },
+        longDateFormatMD : function (key) {
+            var output = this._longDateFormat_MD[key];
+            if (!output && this._longDateFormat_MD[key.toUpperCase()]) {
+                output = this._longDateFormat_MD[key.toUpperCase()].replace(/MMMM|MM|DD|dddd/g, function (val) {
+                    return val.slice(1);
+                });
+                this._longDateFormat_MD[key] = output;
+            }
+            return output;
+        },
+        longDateFormatMY : function (key) {
+            var output = this._longDateFormat_MY[key];
+            if (!output && this._longDateFormat_MY[key.toUpperCase()]) {
+                output = this._longDateFormat_MY[key.toUpperCase()].replace(/MMMM|MM|DD|dddd/g, function (val) {
+                    return val.slice(1);
+                });
+                this._longDateFormat_MY[key] = output;
             }
             return output;
         },
@@ -873,17 +909,36 @@
     }
 
     function expandFormat(format, lang) {
-        var i = 5;
+        var i = 5, j = 5, k = 5;
 
         function replaceLongDateFormatTokens(input) {
             return lang.longDateFormat(input) || input;
         }
+        function replaceLongDateFormatTokensMD(input) {
+            return lang.longDateFormatMD(input) || input;
+        }
+        function replaceLongDateFormatTokensMY(input) {
+            return lang.longDateFormatMY(input) || input;
+        }
 
         localFormattingTokens.lastIndex = 0;
+        localFormattingTokensMD.lastIndex = 0;
+        localFormattingTokensMY.lastIndex = 0;
+
         while (i >= 0 && localFormattingTokens.test(format)) {
             format = format.replace(localFormattingTokens, replaceLongDateFormatTokens);
             localFormattingTokens.lastIndex = 0;
             i -= 1;
+        }
+        while (j >= 0 && localFormattingTokensMD.test(format)) {
+            format = format.replace(localFormattingTokensMD, replaceLongDateFormatTokensMD);
+            localFormattingTokensMD.lastIndex = 0;
+            j -= 1;
+        }
+        while (k >= 0 && localFormattingTokensMY.test(format)) {
+            format = format.replace(localFormattingTokensMY, replaceLongDateFormatTokensMY);
+            localFormattingTokensMY.lastIndex = 0;
+            k -= 1;
         }
 
         return format;

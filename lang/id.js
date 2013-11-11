@@ -25,6 +25,20 @@
             LLL : "D MMMM YYYY [pukul] LT",
             LLLL : "dddd, D MMMM YYYY [pukul] LT"
         },
+        longDateFormatMD : {
+            UT: "HH.mm",
+            U: "DD/MM",
+            UU: "D MMMM",
+            UUU: "D MMMM [pukul] UT",
+            UUUU: "dddd, D MMMM [pukul] UT"
+        },
+        longDateFormatMY : {
+            RT: "HH.mm",
+            R: "MM/YYYY",
+            RR: "MMMM YYYY",
+            RRR: "MMMM YYYY [pukul] RT",
+            RRRR: "dddd, MMMM YYYY [pukul] RT"
+        },
         meridiem : function (hours, minutes, isLower) {
             if (hours < 11) {
                 return 'pagi';

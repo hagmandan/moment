@@ -24,6 +24,20 @@
             LLL : "D [de] MMMM [de] YYYY LT",
             LLLL : "dddd, D [de] MMMM [de] YYYY LT"
         },
+        longDateFormatMD : {
+            UT: "H:mm",
+            U: "DD/MM",
+            UU: "D [de] MMMM",
+            UUU: "D [de] MMMM UT",
+            UUUU: "dddd, D [de] MMMM UT"
+        },
+        longDateFormatMY : {
+            RT: "H:mm",
+            R: "MM/YYYY",
+            RR: "MMMM [de] YYYY",
+            RRR: "MMMM [de] YYYY RT",
+            RRRR: "dddd, MMMM [de] YYYY RT"
+        },
         calendar : {
             sameDay : function () {
                 return '[hoy a la' + ((this.hours() !== 1) ? 's' : '') + '] LT';

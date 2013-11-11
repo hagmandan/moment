@@ -610,10 +610,24 @@
         weekdaysMin : "ne_po_út_st_čt_pá_so".split("_"),
         longDateFormat : {
             LT: "H:mm",
-            L : "DD.MM.YYYY",
-            LL : "D. MMMM YYYY",
-            LLL : "D. MMMM YYYY LT",
+            L : "D.MM.YYYY",
+            LL : "DD. MMMM YYYY",
+            LLL : "DD. MMMM YYYY LT",
             LLLL : "dddd D. MMMM YYYY LT"
+        },
+        longDateFormatMD : {
+            UT: "H:mm",
+            U: "D.MM",
+            UU: "DD. MMMM",
+            UUU: "DD. MMMM  UT",
+            UUUU: "dddd D. MMMM UT"
+        },
+        longDateFormatMY : {
+            RT: "H:mm",
+            R: "MM.YYYY",
+            RR: "MMMM YYYY",
+            RRR: "MMMM YYYY RT",
+            RRRR: "dddd MMMM YYYY RT"
         },
         calendar : {
             sameDay: "[dnes v] LT",
@@ -757,11 +771,25 @@
         weekdaysShort : "søn_man_tir_ons_tor_fre_lør".split("_"),
         weekdaysMin : "sø_ma_ti_on_to_fr_lø".split("_"),
         longDateFormat : {
-            LT : "HH:mm",
+            LT : "HH.mm",
             L : "DD/MM/YYYY",
-            LL : "D MMMM YYYY",
-            LLL : "D MMMM YYYY LT",
+            LL : "D. MMMM YYYY",
+            LLL : "D. MMMM YYYY LT",
             LLLL : "dddd D. MMMM, YYYY LT"
+        },
+        longDateFormatMD : {
+            UT: "HH.mm",
+            U: "DD/MM",
+            UU: "D. MMMM",
+            UUU: "D. MMMM UT",
+            UUUU: "dddd D. MMMM UT"
+        },
+        longDateFormatMY : {
+            RT: "HH.mm",
+            R: "MM/YYYY",
+            RR: "MMMM YYYY",
+            RRR: "MMMM YYYY RT",
+            RRRR: "dddd MMMM, YYYY RT"
         },
         calendar : {
             sameDay : '[I dag kl.] LT',
@@ -834,6 +862,20 @@
             LL : "D. MMMM YYYY",
             LLL : "D. MMMM YYYY LT",
             LLLL : "dddd, D. MMMM YYYY LT"
+        },
+        longDateFormatMD : {
+            UT: "HH:mm [Uhr]",
+            U: "DD.MM.",
+            UU: "D. MMMM",
+            UUU: "D. MMMM UT",
+            UUUU: "dddd, D. MMMM UT"
+        },
+        longDateFormatMY : {
+            RT: "HH:mm [Uhr]",
+            R: "MM.YYYY",
+            RR: "MMMM YYYY",
+            RRR: "MMMM YYYY RT",
+            RRRR: "dddd, MMMM YYYY RT"
         },
         calendar : {
             sameDay: "[Heute um] LT",
@@ -1224,6 +1266,20 @@
             LL : "D [de] MMMM [de] YYYY",
             LLL : "D [de] MMMM [de] YYYY LT",
             LLLL : "dddd, D [de] MMMM [de] YYYY LT"
+        },
+        longDateFormatMD : {
+            UT: "H:mm",
+            U: "DD/MM",
+            UU: "D [de] MMMM",
+            UUU: "D [de] MMMM UT",
+            UUUU: "dddd, D [de] MMMM UT"
+        },
+        longDateFormatMY : {
+            RT: "H:mm",
+            R: "MM/YYYY",
+            RR: "MMMM [de] YYYY",
+            RRR: "MMMM [de] YYYY RT",
+            RRRR: "dddd, MMMM [de] YYYY RT"
         },
         calendar : {
             sameDay : function () {
@@ -1670,6 +1726,20 @@
             LL : "D MMMM YYYY",
             LLL : "D MMMM YYYY LT",
             LLLL : "dddd D MMMM YYYY LT"
+        },
+        longDateFormatMD : {
+            UT: "HH:mm",
+            U: "DD/MM",
+            UU: "D MMMM",
+            UUU: "D MMMM UT",
+            UUUU: "dddd D MMMM UT"
+        },
+        longDateFormatMY : {
+            RT: "HH:mm",
+            R: "MM/YYYY",
+            RR: "MMMM YYYY",
+            RRR: "MMMM YYYY RT",
+            RRRR: "dddd MMMM YYYY RT"
         },
         calendar : {
             sameDay: "[Aujourd'hui à] LT",
@@ -2227,6 +2297,20 @@
             LLL : "D MMMM YYYY [pukul] LT",
             LLLL : "dddd, D MMMM YYYY [pukul] LT"
         },
+        longDateFormatMD : {
+            UT: "HH.mm",
+            U: "DD/MM",
+            UU: "D MMMM",
+            UUU: "D MMMM [pukul] UT",
+            UUUU: "dddd, D MMMM [pukul] UT"
+        },
+        longDateFormatMY : {
+            RT: "HH.mm",
+            R: "MM/YYYY",
+            RR: "MMMM YYYY",
+            RRR: "MMMM YYYY [pukul] RT",
+            RRRR: "dddd, MMMM YYYY [pukul] RT"
+        },
         meridiem : function (hours, minutes, isLower) {
             if (hours < 11) {
                 return 'pagi';
@@ -2413,7 +2497,7 @@
     
     return moment.lang('it', {
         months : function (momentToFormat, format) {
-            if (/D MMMM/.test(format) || /MMMM Y{1,4}/.test(format)) {
+            if (/D MMMM/.test(format) || /MMMM YYYY/.test(format)) {
                 return monthsSubjective[momentToFormat.month()];
             } else {
                 return monthsNominative[momentToFormat.month()];
@@ -2429,6 +2513,20 @@
             LL : "D MMMM YYYY",
             LLL : "D MMMM YYYY LT",
             LLLL : "dddd, D MMMM YYYY LT"
+        },
+        longDateFormatMD : {
+            UT: "HH:mm",
+            U: "DD/MM",
+            UU: "D MMMM",
+            UUU: "D MMMM UT",
+            UUUU: "dddd, D MMMM UT"
+        },
+        longDateFormatMY : {
+            RT: "HH:mm",
+            R: "MM/YYYY",
+            RR: "MMMM YYYY",
+            RRR: "MMMM YYYY RT",
+            RRRR: "dddd, MMMM YYYY RT"
         },
         calendar : {
             sameDay: '[Oggi alle] LT',
@@ -2488,6 +2586,20 @@
             LL : "YYYY年M月D日",
             LLL : "YYYY年M月D日LT",
             LLLL : "YYYY年M月D日LT dddd"
+        },
+        longDateFormatMD : {
+            UT: "Ah時m分",
+            U: "MM/DD",
+            UU: "M月D日",
+            UUU: "M月D日UT",
+            UUUU: "M月D日UT dddd"
+        },
+        longDateFormatMY : {
+            RT: "Ah時m分",
+            R: "YYYY/MM",
+            RR: "YYYY年M月",
+            RRR: "YYYY年M月RT",
+            RRRR: "YYYY年M月RT dddd"
         },
         meridiem : function (hour, minute, isLower) {
             if (hour < 12) {
@@ -2656,6 +2768,20 @@
             LL : "YYYY년 MMMM D일",
             LLL : "YYYY년 MMMM D일 LT",
             LLLL : "YYYY년 MMMM D일 dddd LT"
+        },
+        longDateFormatMD : {
+            UT: "A h시 mm분",
+            U: "MM.DD",
+            UU: "MMMM D일",
+            UUU: "MMMM D일 UT",
+            UUUU: "MMMM D일 dddd UT"
+        },
+        longDateFormatMY : {
+            RT: "A h시 mm분",
+            R: "YYYY.MM.",
+            RR: "YYYY년 MMMM",
+            RRR: "YYYY년 MMMM RT",
+            RRRR: "YYYY년 MMMM dddd RT"
         },
         meridiem : function (hour, minute, isUpper) {
             return hour < 12 ? '오전' : '오후';
@@ -3075,11 +3201,25 @@
         weekdaysShort : "Ahd_Isn_Sel_Rab_Kha_Jum_Sab".split("_"),
         weekdaysMin : "Ah_Is_Sl_Rb_Km_Jm_Sb".split("_"),
         longDateFormat : {
-            LT : "HH.mm",
+            LT : "h:mm a",
             L : "DD/MM/YYYY",
-            LL : "D MMMM YYYY",
-            LLL : "D MMMM YYYY [pukul] LT",
-            LLLL : "dddd, D MMMM YYYY [pukul] LT"
+            LL : "DD MMMM YYYY",
+            LLL : "DD MMMM YYYY [pukul] LT",
+            LLLL : "dddd, DD MMMM YYYY [pukul] LT"
+        },
+        longDateFormatMD : {
+            UT: "h:mm a",
+            U: "DD/MM",
+            UU: "DD MMMM",
+            UUU: "DD MMMM UT",
+            UUUU: "dddd, DD MMMM UT"
+        },
+        longDateFormatMY : {
+            RT: "h:mm a",
+            R: "MM/YYYY",
+            RR: "MMMM YYYY",
+            RRR: "MMMM YYYY RT",
+            RRRR: "dddd, MMMM YYYY RT"
         },
         meridiem : function (hours, minutes, isLower) {
             // if (hours < 11) {
@@ -3322,9 +3462,23 @@
         longDateFormat : {
             LT : "HH:mm",
             L : "DD-MM-YYYY",
-            LL : "D MMMM YYYY",
-            LLL : "D MMMM YYYY LT",
-            LLLL : "dddd D MMMM YYYY LT"
+            LL : "DD MMMM YYYY",
+            LLL : "DD MMMM YYYY LT",
+            LLLL : "dddd DD MMMM YYYY LT"
+        },
+        longDateFormatMD : {
+            UT: "HH:mm",
+            U: "DD-MM",
+            UU: "DD MMMM",
+            UUU: "DD MMMM UT",
+            UUUU: "dddd MMMM YYYY UT"
+        },
+        longDateFormatMY : {
+            RT: "HH:mm",
+            R: "MM-YYYY",
+            RR: "MMMM YYYY",
+            RRR: "MMMM YYYY RT",
+            RRRR: "dddd MMMM YYYY RT"
         },
         calendar : {
             sameDay: '[vandaag om] LT',
@@ -3380,10 +3534,24 @@
         weekdaysMin : "S_M_T_O_T_F_L".split("_"),
         longDateFormat : {
             LT : "HH:mm",
-            L : "DD.MM.YYYY",
-            LL : "D MMMM YYYY",
-            LLL : "D MMMM YYYY LT",
-            LLLL : "dddd D MMMM YYYY LT"
+            L : "YYYY-MM-DD",
+            LL : "YYYY MMMM DD",
+            LLL : "YYYY MMMM DD LT",
+            LLLL : "dddd, YYYY MMMM DD LT"
+        },
+        longDateFormatMD : {
+            UT: "HH:mm",
+            U: "MM-DD",
+            UU: "MMMM DD",
+            UUU: "MMMM DD UT",
+            UUUU: "dddd, MMMM DD UT"
+        },
+        longDateFormatMY : {
+            RT: "HH:mm",
+            R: "YYYY-MM",
+            RR: "YYYY MMMM",
+            RRR: "YYYY MMMM RT",
+            RRRR: "dddd, YYYY MMMM RT"
         },
         calendar : {
             sameDay: '[I dag klokka] LT',
@@ -3473,6 +3641,20 @@
             LLL : "D MMMM YYYY LT",
             LLLL : "dddd, D MMMM YYYY LT"
         },
+        longDateFormatMD : {
+            UT: "HH:mm",
+            U: "DD.MM.",
+            UU: "D MMMM",
+            UUU: "D MMMM UT",
+            UUUU: "dddd, D MMMM  UT"
+        },
+        longDateFormatMY : {
+            RT: "HH:mm",
+            R: "MM.YYYY",
+            RR: "MMMM YYYY",
+            RRR: "MMMM YYYY RT",
+            RRRR: "dddd, MMMM YYYY RT"
+        },
         calendar : {
             sameDay: '[Dziś o] LT',
             nextDay: '[Jutro o] LT',
@@ -3540,6 +3722,20 @@
             LL : "D [de] MMMM [de] YYYY",
             LLL : "D [de] MMMM [de] YYYY LT",
             LLLL : "dddd, D [de] MMMM [de] YYYY LT"
+        },
+        longDateFormatMD : {
+            UT: "HH:mm",
+            U: "DD/MM",
+            UU: "D [de] MMMM",
+            UUU: "D [de] MMMM UT",
+            UUUU: "dddd, D [de] MMMM UT"
+        },
+        longDateFormatMY : {
+            RT: "HH:mm",
+            R: "MM/YYYY",
+            RR: "MMMM [de] YYYY",
+            RRR: "MMMM [de] YYYY RT",
+            RRRR: "dddd, MMMM [de] YYYY RT"
         },
         calendar : {
             sameDay: '[Hoje às] LT',
@@ -3657,8 +3853,22 @@
             LT : "H:mm",
             L : "DD/MM/YYYY",
             LL : "D MMMM YYYY",
-            LLL : "D MMMM YYYY H:mm",
-            LLLL : "dddd, D MMMM YYYY H:mm"
+            LLL : "D MMMM YYYY LT",
+            LLLL : "dddd, D MMMM YYYY LT"
+        },
+        longDateFormatMD : {
+            UT: "H:mm",
+            U: "DD/MM",
+            UU: "D MMMM",
+            UUU: "D MMMM UT",
+            UUUU: "dddd, D MMMM UT"
+        },
+        longDateFormatMY : {
+            RT: "H:mm",
+            R: "MM/YYYY",
+            RR: "MMMM YYYY",
+            RRR: "MMMM YYYY LT",
+            RRRR: "dddd, MMMM YYYY LT"
         },
         calendar : {
             sameDay: "[azi la] LT",
@@ -3774,9 +3984,23 @@
         longDateFormat : {
             LT : "HH:mm",
             L : "DD.MM.YYYY",
-            LL : "D MMMM YYYY г.",
-            LLL : "D MMMM YYYY г., LT",
-            LLLL : "dddd, D MMMM YYYY г., LT"
+            LL : "D MMMM YYYY [г].",
+            LLL : "D MMMM YYYY [г]., LT",
+            LLLL : "dddd, D MMMM YYYY [г]., LT"
+        },
+        longDateFormatMD : {
+            UT: "HH:mm",
+            U: "DD.MM.",
+            UU: "D MMMM [г].",
+            UUU: "D MMMM [г]., UT",
+            UUUU: "dddd, D MMMM [г]., UT"
+        },
+        longDateFormatMY : {
+            RT: "HH:mm",
+            R: "MM.YYYY",
+            RR: "MMMM YYYY [г].",
+            RRR: "MMMM YYYY [г]., RT",
+            RRRR: "dddd, MMMM YYYY [г]., RT"
         },
         calendar : {
             sameDay: '[Сегодня в] LT',
@@ -4240,6 +4464,20 @@
             LLL : "D MMMM YYYY LT",
             LLLL : "dddd D MMMM YYYY LT"
         },
+        longDateFormatMD : {
+            UT: "HH:mm",
+            U: "MM-DD",
+            UU: "D MMMM",
+            UUU: "D MMMM UT",
+            UUUU: "dddd D MMMM UT"
+        },
+        longDateFormatMY : {
+            RT: "HH:mm",
+            R: "YYYY-MM",
+            RR: "MMMM YYYY",
+            RRR: "MMMM YYYY RT",
+            RRRR: "dddd MMMM YYYY RT"
+        },
         calendar : {
             sameDay: '[Idag] LT',
             nextDay: '[Imorgon] LT',
@@ -4363,6 +4601,20 @@
             LLL : "MMMM D, YYYY LT",
             LLLL : "dddd, MMMM DD, YYYY LT"
         },
+        longDateFormatMD : {
+            UT: "HH:mm",
+            U: "MM/D",
+            UU: "MMMM D",
+            UUU: "MMMM D UT",
+            UUUU: "dddd, MMMM DD, UT"
+        },
+        longDateFormatMY : {
+            RT: "HH:mm",
+            R: "MM/YYYY",
+            RR: "MMMM, YYYY",
+            RRR: "MMMM, YYYY RT",
+            RRRR: "dddd, MMMM, YYYY RT"
+        },
         calendar : {
             sameDay: "[Ngayon sa] LT",
             nextDay: '[Bukas sa] LT',
@@ -4449,6 +4701,20 @@
             LL : "D MMMM YYYY",
             LLL : "D MMMM YYYY LT",
             LLLL : "dddd, D MMMM YYYY LT"
+        },
+        longDateFormatMD : {
+            UT: "HH:mm",
+            U: "DD.MM.",
+            UU: "D MMMM",
+            UUU: "D MMMM UT",
+            UUUU: "dddd, D MMMM UT"
+        },
+        longDateFormatMY : {
+            RT: "HH:mm",
+            R: "MM.YYYY",
+            RR: "MMMM YYYY",
+            RRR: "MMMM YYYY RT",
+            RRRR: "dddd, MMMM YYYY RT"
         },
         calendar : {
             sameDay : '[bugün saat] LT',
@@ -4909,6 +5175,20 @@
             lll : "YYYY年MMMD日LT",
             llll : "YYYY年MMMD日ddddLT"
         },
+        longDateFormatMD : {
+            UT: "Ah点mm",
+            U: "MMMD日",
+            UU: "MMMD日",
+            UUU: "MMMD日UT",
+            UUUU: "MMMD日ddddUT"
+        },
+        longDateFormatMY : {
+            RT: "Ah点mm",
+            R: "YYYY年MMM",
+            RR: "YYYY年MMM",
+            RRR: "YYYY年MMMLT",
+            RRRR: "YYYY年MMMddddLT"
+        },
         meridiem : function (hour, minute, isLower) {
             var hm = hour * 100 + minute;
             if (hm < 900) {
@@ -4993,6 +5273,20 @@
             ll : "YYYY年MMMD日",
             lll : "YYYY年MMMD日LT",
             llll : "YYYY年MMMD日ddddLT"
+        },
+        longDateFormatMD : {
+            UT: "Ah點mm",
+            U: "MMMD日",
+            UU: "MMMD日",
+            UUU: "MMMD日UT",
+            UUUU: "MMMD日ddddUT"
+        },
+        longDateFormatMY : {
+            RT: "Ah點mm",
+            R: "YYYY年MMM",
+            RR: "YYYY年MMM",
+            RRR: "YYYY年MMMLT",
+            RRRR: "YYYY年MMMddddLT"
         },
         meridiem : function (hour, minute, isLower) {
             var hm = hour * 100 + minute;

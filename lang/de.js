@@ -39,6 +39,20 @@
             LLL : "D. MMMM YYYY LT",
             LLLL : "dddd, D. MMMM YYYY LT"
         },
+        longDateFormatMD : {
+            UT: "HH:mm [Uhr]",
+            U: "DD.MM.",
+            UU: "D. MMMM",
+            UUU: "D. MMMM UT",
+            UUUU: "dddd, D. MMMM UT"
+        },
+        longDateFormatMY : {
+            RT: "HH:mm [Uhr]",
+            R: "MM.YYYY",
+            RR: "MMMM YYYY",
+            RRR: "MMMM YYYY RT",
+            RRRR: "dddd, MMMM YYYY RT"
+        },
         calendar : {
             sameDay: "[Heute um] LT",
             sameElse: "L",
