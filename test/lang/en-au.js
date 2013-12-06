@@ -351,10 +351,10 @@ exports["lang:en-au"] = {
     },
 
     "returns the name of the language" : function (test) {
-        if (typeof module !== 'undefied' && module.exports) {
+        if (typeof module !== 'undefined' && module.exports) {
             test.equal(require('../../lang/en-au'), 'en-au', "module should export en-au");
         }
-        
+
         test.done();
     }
 };

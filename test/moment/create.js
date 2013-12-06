@@ -112,10 +112,9 @@ exports.create = {
     },
 
     "string without format" : function (test) {
-        test.expect(3);
+        test.expect(2);
         test.ok(moment("Aug 9, 1995").toDate() instanceof Date, "Aug 9, 1995");
         test.ok(moment("Mon, 25 Dec 1995 13:30:00 GMT").toDate() instanceof Date, "Mon, 25 Dec 1995 13:30:00 GMT");
-        test.equal(new Date(2013, 8, 13, 7, 26).valueOf(), moment("2013-09-13 7:26 am").valueOf(), "2013-09-13 7:26 am");
         test.done();
     },
 
@@ -270,6 +269,19 @@ exports.create = {
         test.done();
     },
 
+    "milliseconds format" : function (test) {
+        test.expect(5);
+        test.equal(moment('1', 'S').get('ms'), 100, 'deciseconds');
+        // test.equal(moment('10', 'S', true).isValid(), false, 'deciseconds with two digits');
+        // test.equal(moment('1', 'SS', true).isValid(), false, 'centiseconds with one digits');
+        test.equal(moment('12', 'SS').get('ms'), 120, 'centiseconds');
+        // test.equal(moment('123', 'SS', true).isValid(), false, 'centiseconds with three digits');
+        test.equal(moment('123', 'SSS').get('ms'), 123, 'milliseconds');
+        test.equal(moment('1234', 'SSSS').get('ms'), 123, 'milliseconds with SSSS');
+        test.equal(moment('123456789101112', 'SSSS').get('ms'), 123, 'milliseconds with SSSS');
+        test.done();
+    },
+
     "string with format no separators" : function (test) {
         moment.lang('en');
         var a = [
@@ -335,7 +347,7 @@ exports.create = {
 
         test.equal(moment('11-02-10', ['MM/DD/YY', 'YY MM DD', 'DD-MM-YY']).format('MM DD YYYY'), '02 11 2010', 'all unparsed substrings have influence on format penalty');
         test.equal(moment('11-02-10', ['MM-DD-YY HH:mm', 'YY MM DD']).format('MM DD YYYY'), '02 10 2011', 'prefer formats without extra tokens');
-        test.equal(moment('11-02-10 BbbB', ['MM-DD-YY', 'YY.MM.DD BbbB']).format('MM DD YYYY'), '02 10 2011', 'prefer formats that dont result in extra characters');
+        test.equal(moment('11-02-10 jjnk', ['MM-DD-YY', 'YY.MM.DD jjnk']).format('MM DD YYYY'), '02 10 2011', 'prefer formats that dont result in extra characters');
         test.equal(moment('11-22-10', ['YY-MM-DD', 'YY-DD-MM']).format('MM DD YYYY'), '10 22 2011', 'prefer valid results');
 
         test.equal(moment('gibberish', ['YY-MM-DD', 'YY-DD-MM']).format('MM DD YYYY'), 'Invalid date', 'doest throw for invalid strings');
@@ -486,20 +498,50 @@ exports.create = {
         test.done();
     },
 
+    "parsing ISO with Z" : function (test) {
+        var i, mom, formats = [
+            ['2011-10-08T18:04',             '2011-10-08T18:04:00.000'],
+            ['2011-10-08T18:04:20',          '2011-10-08T18:04:20.000'],
+            ['2011-10-08T18:04:20.1',        '2011-10-08T18:04:20.100'],
+            ['2011-10-08T18:04:20.11',       '2011-10-08T18:04:20.110'],
+            ['2011-10-08T18:04:20.111',      '2011-10-08T18:04:20.111'],
+            ['2011-W40-6T18',                '2011-10-08T18:00:00.000'],
+            ['2011-W40-6T18:04',             '2011-10-08T18:04:00.000'],
+            ['2011-W40-6T18:04:20',          '2011-10-08T18:04:20.000'],
+            ['2011-W40-6T18:04:20.1',        '2011-10-08T18:04:20.100'],
+            ['2011-W40-6T18:04:20.11',       '2011-10-08T18:04:20.110'],
+            ['2011-W40-6T18:04:20.111',      '2011-10-08T18:04:20.111'],
+            ['2011-281T18',                  '2011-10-08T18:00:00.000'],
+            ['2011-281T18:04',               '2011-10-08T18:04:00.000'],
+            ['2011-281T18:04:20',            '2011-10-08T18:04:20.000'],
+            ['2011-281T18:04:20',            '2011-10-08T18:04:20.000'],
+            ['2011-281T18:04:20.1',          '2011-10-08T18:04:20.100'],
+            ['2011-281T18:04:20.11',         '2011-10-08T18:04:20.110'],
+            ['2011-281T18:04:20.111',        '2011-10-08T18:04:20.111']
+        ];
+
+        for (i = 0; i < formats.length; i++) {
+            mom = moment(formats[i][0] + 'Z').utc();
+            test.equal(mom.format('YYYY-MM-DDTHH:mm:ss.SSS'), formats[i][1], "moment should be able to parse ISO in UTC " + formats[i][0] + 'Z');
+
+            mom = moment(formats[i][0] + ' Z').utc();
+            test.equal(mom.format('YYYY-MM-DDTHH:mm:ss.SSS'), formats[i][1], "moment should be able to parse ISO in UTC " + formats[i][0] + ' Z');
+        }
+        test.done();
+    },
+
     "parsing iso with T" : function (test) {
-        test.expect(9);
+        test.expect(8);
 
         test.equal(moment('2011-10-08T18')._f, "YYYY-MM-DDTHH", "should include 'T' in the format");
         test.equal(moment('2011-10-08T18:20')._f, "YYYY-MM-DDTHH:mm", "should include 'T' in the format");
         test.equal(moment('2011-10-08T18:20:13')._f, "YYYY-MM-DDTHH:mm:ss", "should include 'T' in the format");
-        test.equal(moment('2011-10-08T18:20:13.321')._f, "YYYY-MM-DDTHH:mm:ss.S", "should include 'T' in the format");
+        test.equal(moment('2011-10-08T18:20:13.321')._f, "YYYY-MM-DDTHH:mm:ss.SSSS", "should include 'T' in the format");
 
         test.equal(moment('2011-10-08 18')._f, "YYYY-MM-DD HH", "should not include 'T' in the format");
         test.equal(moment('2011-10-08 18:20')._f, "YYYY-MM-DD HH:mm", "should not include 'T' in the format");
         test.equal(moment('2011-10-08 18:20:13')._f, "YYYY-MM-DD HH:mm:ss", "should not include 'T' in the format");
-        test.equal(moment('2011-10-08 18:20:13.321')._f, "YYYY-MM-DD HH:mm:ss.S", "should not include 'T' in the format");
-
-        test.ok(moment("2013-04-23 15:23:47 UTC").isValid(), "including a trailing UTC in the input should work");
+        test.equal(moment('2011-10-08 18:20:13.321')._f, "YYYY-MM-DD HH:mm:ss.SSSS", "should not include 'T' in the format");
 
         test.done();
     },
@@ -576,7 +618,6 @@ exports.create = {
     },
 
     "strict parsing" : function (test) {
-        test.expect(11);
         test.equal(moment("2012-05", "YYYY-MM", true).format("YYYY-MM"), "2012-05", "parse correct string");
         test.equal(moment(" 2012-05", "YYYY-MM", true).isValid(), false, "fail on extra whitespace");
         test.equal(moment("foo 2012-05", "[foo] YYYY-MM", true).format('YYYY-MM'), "2012-05", "handle fixed text");
@@ -590,6 +631,34 @@ exports.create = {
         test.equal(moment("2010.*...", "YYYY.*", true).isValid(), false, "invalid format with regex chars");
         test.equal(moment("2010.*", "YYYY.*", true).year(), 2010, "valid format with regex chars");
         test.equal(moment(".*2010.*", ".*YYYY.*", true).year(), 2010, "valid format with regex chars on both sides");
+
+        //strict tokens
+        test.equal(moment("2-05-25", 'YYYY-MM-DD', true).isValid(), false, "invalid one-digit year");
+        test.equal(moment("20-05-25", 'YYYY-MM-DD', true).isValid(), false, "invalid two-digit year");
+        test.equal(moment("201-05-25", 'YYYY-MM-DD', true).isValid(), false, "invalid three-digit year");
+
+        test.equal(moment("12-05-25", 'YY-MM-DD', true).isValid(), true, "valid two-digit year");
+        test.equal(moment("2012-05-25", 'YY-MM-DD', true).isValid(), false, "invalid four-digit year");
+
+        test.equal(moment("2012-5-25", 'YYYY-MM-DD', true).isValid(), false, "invalid one-digit month");
+
+        test.equal(moment("2012-05-2", 'YYYY-MM-DD', true).isValid(), false, "invalid one-digit day");
+
+        test.equal(moment("+002012-05-25", 'YYYYY-MM-DD', true).isValid(), true, "valid six-digit year");
+        test.equal(moment("+2012-05-25", 'YYYYY-MM-DD', true).isValid(), false, "invalid four-digit year");
+
+        //thse are kinda pointless, but they should work as expected
+        test.equal(moment("1", 'S', true).isValid(), true, "valid one-digit milisecond");
+        test.equal(moment("12", 'S', true).isValid(), false, "invalid two-digit milisecond");
+        test.equal(moment("123", 'S', true).isValid(), false, "invalid three-digit milisecond");
+
+        test.equal(moment("1", 'SS', true).isValid(), false, "invalid one-digit milisecond");
+        test.equal(moment("12", 'SS', true).isValid(), true, "valid two-digit milisecond");
+        test.equal(moment("123", 'SS', true).isValid(), false, "invalid three-digit milisecond");
+
+        test.equal(moment("1", 'SSS', true).isValid(), false, "invalid one-digit milisecond");
+        test.equal(moment("12", 'SSS', true).isValid(), false, "invalid two-digit milisecond");
+        test.equal(moment("123", 'SSS', true).isValid(), true, "valid three-digit milisecond");
 
         test.done();
     },

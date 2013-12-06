@@ -24,20 +24,6 @@
             LLL : "MMMM D, YYYY LT",
             LLLL : "dddd, MMMM DD, YYYY LT"
         },
-        longDateFormatMD : {
-            UT: "HH:mm",
-            U: "MM/D",
-            UU: "MMMM D",
-            UUU: "MMMM D UT",
-            UUUU: "dddd, MMMM DD, UT"
-        },
-        longDateFormatMY : {
-            RT: "HH:mm",
-            R: "MM/YYYY",
-            RR: "MMMM, YYYY",
-            RRR: "MMMM, YYYY RT",
-            RRRR: "dddd, MMMM, YYYY RT"
-        },
         calendar : {
             sameDay: "[Ngayon sa] LT",
             nextDay: '[Bukas sa] LT',

@@ -29,23 +29,9 @@
         longDateFormat : {
             LT : "HH:mm",
             L : "DD-MM-YYYY",
-            LL : "DD MMMM YYYY",
-            LLL : "DD MMMM YYYY LT",
-            LLLL : "dddd DD MMMM YYYY LT"
-        },
-        longDateFormatMD : {
-            UT: "HH:mm",
-            U: "DD-MM",
-            UU: "DD MMMM",
-            UUU: "DD MMMM UT",
-            UUUU: "dddd MMMM YYYY UT"
-        },
-        longDateFormatMY : {
-            RT: "HH:mm",
-            R: "MM-YYYY",
-            RR: "MMMM YYYY",
-            RRR: "MMMM YYYY RT",
-            RRRR: "dddd MMMM YYYY RT"
+            LL : "D MMMM YYYY",
+            LLL : "D MMMM YYYY LT",
+            LLLL : "dddd D MMMM YYYY LT"
         },
         calendar : {
             sameDay: '[vandaag om] LT',

@@ -18,25 +18,11 @@
         weekdaysShort : "søn_man_tir_ons_tor_fre_lør".split("_"),
         weekdaysMin : "sø_ma_ti_on_to_fr_lø".split("_"),
         longDateFormat : {
-            LT : "HH.mm",
+            LT : "HH:mm",
             L : "DD/MM/YYYY",
-            LL : "D. MMMM YYYY",
-            LLL : "D. MMMM YYYY LT",
+            LL : "D MMMM YYYY",
+            LLL : "D MMMM YYYY LT",
             LLLL : "dddd D. MMMM, YYYY LT"
-        },
-        longDateFormatMD : {
-            UT: "HH.mm",
-            U: "DD/MM",
-            UU: "D. MMMM",
-            UUU: "D. MMMM UT",
-            UUUU: "dddd D. MMMM UT"
-        },
-        longDateFormatMY : {
-            RT: "HH.mm",
-            R: "MM/YYYY",
-            RR: "MMMM YYYY",
-            RRR: "MMMM YYYY RT",
-            RRRR: "dddd MMMM, YYYY RT"
         },
         calendar : {
             sameDay : '[I dag kl.] LT',

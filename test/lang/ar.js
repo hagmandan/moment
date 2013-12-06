@@ -346,12 +346,11 @@ exports["lang:ar"] = {
 
         test.done();
     },
-    
+
     "returns the name of the language" : function (test) {
-        if (typeof module !== 'undefied' && module.exports) {
+        if (typeof module !== 'undefined' && module.exports) {
             test.equal(require('../../lang/ar'), 'ar', "module should export ar");
         }
-        
         test.done();
     }
 };

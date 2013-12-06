@@ -343,12 +343,11 @@ exports["lang:tzm"] = {
 
         test.done();
     },
-    
+
     "returns the name of the language" : function (test) {
-        if (typeof module !== 'undefied' && module.exports) {
+        if (typeof module !== 'undefined' && module.exports) {
             test.equal(require('../../lang/tzm'), 'tzm', "module should export tzm");
         }
-        
         test.done();
     }
 };

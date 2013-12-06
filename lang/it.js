@@ -12,7 +12,7 @@
         factory(window.moment); // Browser global
     }
 }(function (moment) {
-
+    
     var monthsNominative = "Gennaio_Febbraio_Marzo_Aprile_Maggio_Giugno_Luglio_Agosto_Settembre_Ottobre_Novembre_Dicembre".split("_"),
         monthsSubjective = "gennaio_febbraio_marzo_aprile_maggio_giugno_luglio_agosto_settembre_ottobre_novembre_dicembre".split("_");
     
@@ -62,7 +62,7 @@
                 return ((/^[0-9].+$/).test(s) ? "tra" : "in") + " " + s;
             },
             past : "%s fa",
-            s : "secondi",
+            s : "alcuni secondi",
             m : "un minuto",
             mm : "%d minuti",
             h : "un'ora",

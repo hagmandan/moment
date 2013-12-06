@@ -39,7 +39,7 @@
             'accusative': 'января_февраля_марта_апреля_мая_июня_июля_августа_сентября_октября_ноября_декабря'.split('_')
         },
 
-        nounCase = (/D[oD]? *MMMM?|MMMM? *D[oD]?|D{1,2}? *MMMM?|MMMM? *D{1,3}?/i).test(format) ?
+        nounCase = (/D[oD]?(\[[^\[\]]*\]|\s+)+MMMM?/).test(format) ?
             'accusative' :
             'nominative';
 
@@ -52,7 +52,7 @@
             'accusative': 'янв._февр._марта_апр._мая_июня_июля_авг._сент._окт._нояб._дек.'.split('_')
         },
 
-        nounCase = (/D[oD]? *MMM?|MMM? *D[oD]?/i).test(format) ?
+        nounCase = (/D[oD]?(\[[^\[\]]*\]|\s+)+MMMM?/).test(format) ?
             'accusative' :
             'nominative';
 

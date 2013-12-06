@@ -170,6 +170,38 @@ exports["lang:ru"] = {
         test.done();
     },
 
+    "format month case with escaped symbols" : function (test) {
+        test.expect(48);
+
+        var months = {
+            'nominative': 'Январь_Февраль_Март_Апрель_Май_Июнь_Июль_Август_Сентябрь_Октябрь_Ноябрь_Декабрь'.split('_'),
+            'accusative': 'января_февраля_марта_апреля_мая_июня_июля_августа_сентября_октября_ноября_декабря'.split('_')
+        }, i;
+        for (i = 0; i < 12; i++) {
+            test.equal(moment([2013, i, 1]).format('D[] MMMM'), '1 ' + months.accusative[i], '1 ' + months.accusative[i]);
+            test.equal(moment([2013, i, 1]).format('[<i>]D[</i>] [<b>]MMMM[</b>]'), '<i>1</i> <b>' + months.accusative[i] + '</b>', '1 <b>' + months.accusative[i] + '</b>');
+            test.equal(moment([2013, i, 1]).format('D[-й день] MMMM'), '1-й день ' + months.accusative[i], '1-й день ' + months.accusative[i]);
+            test.equal(moment([2013, i, 1]).format('D, MMMM'), '1, ' + months.nominative[i], '1, ' + months.nominative[i]);
+        }
+        test.done();
+    },
+
+    "format month short case with escaped symbols" : function (test) {
+        test.expect(48);
+
+        var monthsShort = {
+            'nominative': 'Янв._Февр._Март_Апр._Май_Июнь_Июль_Авг._Сент._Окт._Нояб._Дек.'.split('_'),
+            'accusative': 'янв._февр._марта_апр._мая_июня_июля_авг._сент._окт._нояб._дек.'.split('_')
+        }, i;
+        for (i = 0; i < 12; i++) {
+            test.equal(moment([2013, i, 1]).format('D[] MMM'), '1 ' + monthsShort.accusative[i], '1 ' + monthsShort.accusative[i]);
+            test.equal(moment([2013, i, 1]).format('[<i>]D[</i>] [<b>]MMM[</b>]'), '<i>1</i> <b>' + monthsShort.accusative[i] + '</b>', '1 <b>' + monthsShort.accusative[i] + '</b>');
+            test.equal(moment([2013, i, 1]).format('D[-й день] MMM'), '1-й день ' + monthsShort.accusative[i], '1-й день ' + monthsShort.accusative[i]);
+            test.equal(moment([2013, i, 1]).format('D, MMM'), '1, ' + monthsShort.nominative[i], '1, ' + monthsShort.nominative[i]);
+        }
+        test.done();
+    },
+
     "format week" : function (test) {
         test.expect(7);
 
@@ -419,7 +451,7 @@ exports["lang:ru"] = {
     },
     
     "returns the name of the language" : function (test) {
-        if (typeof module !== 'undefied' && module.exports) {
+        if (typeof module !== 'undefined' && module.exports) {
             test.equal(require('../../lang/ru'), 'ru', "module should export ru");
         }
         
