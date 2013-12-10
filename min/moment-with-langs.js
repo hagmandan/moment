@@ -676,14 +676,14 @@
         _longDateFormat_MD : {
             UT : "h:mm A",
             U : "MM/DD",
-            UU : "MMM D",
+            UU : "MMMM D",
             UUU : "MMMM D",
             UUUU : "dddd, MMMM D UT"
         },
         _longDateFormat_MY : {
             RT : "h:mm A",
             R : "MM/YYYY",
-            RR : "MMM YYYY",
+            RR : "MMMM YYYY",
             RRR : "MMMM YYYY",
             RRRR : "dddd, MMMM YYYY RT"
         },
