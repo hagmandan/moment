@@ -10,7 +10,7 @@ exports.format = {
     },
 
     "format escape brackets" : function (test) {
-        test.expect(10);
+        test.expect(20);
 
         moment.lang('en');
 
@@ -24,6 +24,19 @@ exports.format = {
         test.equal(b.format('[L] L'), 'L 02/14/2009', 'localized tokens with escaped localized tokens');
         test.equal(b.format('[L LL LLL LLLL aLa]'), 'L LL LLL LLLL aLa', 'localized tokens with escaped localized tokens');
         test.equal(b.format('[LLL] LLL'), 'LLL February 14 2009 3:25 PM', 'localized tokens with escaped localized tokens (recursion)');
+
+        test.equal(b.format('[R RR RRR RRRR aRa]'), 'R RR RRR RRRR aRa', 'localized tokens (R=MY) with escaped localized tokens');
+        test.equal(b.format('R'), '02/2009', 'localized tokens (R=MY) with escaped localized tokens (recursion)');
+        test.equal(b.format('RR'), 'February 2009', 'localized tokens (R=MY) with escaped localized tokens (recursion)');
+        test.equal(b.format('RRR'), 'February 2009', 'localized tokens (R=MY) with escaped localized tokens (recursion)');
+        test.equal(b.format('RRRR'), 'Saturday, February 2009 3:25 PM', 'localized tokens (R=MY) with escaped localized tokens (recursion)');
+        
+        test.equal(b.format('[U UU UUU UUUU aUa]'), 'U UU UUU UUUU aUa', 'localized tokens (U=MD) with escaped localized tokens');
+        test.equal(b.format('U'), '02/14', 'localized tokens (U=MD) with escaped localized tokens (recursion)');
+        test.equal(b.format('UU'), 'February 14', 'localized tokens (U=MD) with escaped localized tokens (recursion)');
+        test.equal(b.format('UUU'), 'February 14', 'localized tokens (U=MD) with escaped localized tokens (recursion)');
+        test.equal(b.format('UUUU'), 'Saturday, February 14 3:25 PM', 'localized tokens (U=MD) with escaped localized tokens (recursion)');
+
         test.equal(b.format('YYYY[\n]DD[\n]'), '2009\n14\n', 'Newlines');
         test.done();
     },
