@@ -28,9 +28,9 @@ module.exports = function (grunt) {
         return embeddedContent;
     }
 
-    var reTransform = /function \(factory\) \{[^]*\}(?=\(function \(moment\) \{)/gm;
+    var reTransform = /function \(root, factory\) \{[^]*\}(?=\(this, function \(moment\) {)/gm;
     var replaceWith =
-        'function (factory) {\n' +
+        'function (root, factory) {\n' +
         '    factory(moment);\n' +
         '}';
 

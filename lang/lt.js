@@ -2,15 +2,15 @@
 // language : Lithuanian (lt)
 // author : Mindaugas Mozūras : https://github.com/mmozuras
 
-(function (factory) {
-    if (typeof define === 'function' && define.amd) {
+(function (root, factory) {
+    if (root['moment']) {
+        factory(root['moment']);//global or window
+    } else if (typeof define === 'function' && define.amd) {
         define(['moment'], factory); // AMD
     } else if (typeof exports === 'object') {
         module.exports = factory(require('../moment')); // Node
-    } else {
-        factory(window.moment); // Browser global
     }
-}(function (moment) {
+}(this, function (moment) {
     var units = {
         "m" : "minutė_minutės_minutę",
         "mm": "minutės_minučių_minutes",

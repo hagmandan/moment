@@ -3,16 +3,15 @@
 // author : Limon Monte : https://github.com/limonte
 // based on (bs) translation by Nedim Cholich
 
-(function (factory) {
-    if (typeof define === 'function' && define.amd) {
+(function (root, factory) {
+    if (root['moment']) {
+        factory(root['moment']);//global or window
+    } else if (typeof define === 'function' && define.amd) {
         define(['moment'], factory); // AMD
     } else if (typeof exports === 'object') {
         module.exports = factory(require('../moment')); // Node
-    } else {
-        factory(window.moment); // Browser global
     }
-}(function (moment) {
-
+}(this, function (moment) {
     function translate(number, withoutSuffix, key) {
         var result = number + " ";
         switch (key) {

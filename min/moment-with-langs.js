@@ -2342,9 +2342,9 @@
 // author : ElFadili Yassine : https://github.com/ElFadiliY
 // author : Abdel Said : https://github.com/abdelsaid
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('ar-ma', {
         months : "يناير_فبراير_مارس_أبريل_ماي_يونيو_يوليوز_غشت_شتنبر_أكتوبر_نونبر_دجنبر".split("_"),
         monthsShort : "يناير_فبراير_مارس_أبريل_ماي_يونيو_يوليوز_غشت_شتنبر_أكتوبر_نونبر_دجنبر".split("_"),
@@ -2392,9 +2392,9 @@
 // author : Abdel Said : https://github.com/abdelsaid
 // changes in months, weekdays : Ahmed Elkhatib
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('ar', {
         months : "يناير/ كانون الثاني_فبراير/ شباط_مارس/ آذار_أبريل/ نيسان_مايو/ أيار_يونيو/ حزيران_يوليو/ تموز_أغسطس/ آب_سبتمبر/ أيلول_أكتوبر/ تشرين الأول_نوفمبر/ تشرين الثاني_ديسمبر/ كانون الأول".split("_"),
         monthsShort : "يناير/ كانون الثاني_فبراير/ شباط_مارس/ آذار_أبريل/ نيسان_مايو/ أيار_يونيو/ حزيران_يوليو/ تموز_أغسطس/ آب_سبتمبر/ أيلول_أكتوبر/ تشرين الأول_نوفمبر/ تشرين الثاني_ديسمبر/ كانون الأول".split("_"),
@@ -2441,9 +2441,9 @@
 // language : bulgarian (bg)
 // author : Krasen Borisov : https://github.com/kraz
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('bg', {
         months : "януари_февруари_март_април_май_юни_юли_август_септември_октомври_ноември_декември".split("_"),
         monthsShort : "янр_фев_мар_апр_май_юни_юли_авг_сеп_окт_ное_дек".split("_"),
@@ -2521,9 +2521,9 @@
 // language : breton (br)
 // author : Jean-Baptiste Le Duigou : https://github.com/jbleduigou
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     function relativeTimeWithMutation(number, withoutSuffix, key) {
         var format = {
             'mm': "munutenn",
@@ -2623,10 +2623,9 @@
 // author : Nedim Cholich : https://github.com/frontyard
 // based on (hr) translation by Bojan Marković
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
-
+}(this, function (moment) {
     function translate(number, withoutSuffix, key) {
         var result = number + " ";
         switch (key) {
@@ -2755,9 +2754,9 @@
 // language : catalan (ca)
 // author : Juan G. Hurtado : https://github.com/juanghurtado
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('ca', {
         months : "Gener_Febrer_Març_Abril_Maig_Juny_Juliol_Agost_Setembre_Octubre_Novembre_Desembre".split("_"),
         monthsShort : "Gen._Febr._Mar._Abr._Mai._Jun._Jul._Ag._Set._Oct._Nov._Des.".split("_"),
@@ -2815,9 +2814,9 @@
 // language : czech (cs)
 // author : petrbela : https://github.com/petrbela
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     var months = "leden_únor_březen_duben_květen_červen_červenec_srpen_září_říjen_listopad_prosinec".split("_"),
         monthsSubjective = "ledna_února_března_dubna_května_června_července_srpna_září_října_listopadu_prosince".split("_"),
         monthsShort = "led_úno_bře_dub_kvě_čvn_čvc_srp_zář_říj_lis_pro".split("_");
@@ -2985,9 +2984,9 @@
 // language : chuvash (cv)
 // author : Anatoly Mironov : https://github.com/mirontoli
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('cv', {
         months : "кăрлач_нарăс_пуш_ака_май_çĕртме_утă_çурла_авăн_юпа_чӳк_раштав".split("_"),
         monthsShort : "кăр_нар_пуш_ака_май_çĕр_утă_çур_ав_юпа_чӳк_раш".split("_"),
@@ -3038,9 +3037,9 @@
 // language : Welsh (cy)
 // author : Robert Allen
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang("cy", {
         months: "Ionawr_Chwefror_Mawrth_Ebrill_Mai_Mehefin_Gorffennaf_Awst_Medi_Hydref_Tachwedd_Rhagfyr".split("_"),
         monthsShort: "Ion_Chwe_Maw_Ebr_Mai_Meh_Gor_Aws_Med_Hyd_Tach_Rhag".split("_"),
@@ -3109,9 +3108,9 @@
 // language : danish (da)
 // author : Ulrik Nielsen : https://github.com/mrbase
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('da', {
         months : "januar_februar_marts_april_maj_juni_juli_august_september_oktober_november_december".split("_"),
         monthsShort : "jan_feb_mar_apr_maj_jun_jul_aug_sep_okt_nov_dec".split("_"),
@@ -3160,9 +3159,9 @@
 // author : lluchs : https://github.com/lluchs
 // author: Menelion Elensúle: https://github.com/Oire
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     function processRelativeTime(number, withoutSuffix, key, isFuture) {
         var format = {
             'm': ['eine Minute', 'einer Minute'],
@@ -3238,9 +3237,9 @@
 // language : modern greek (el)
 // author : Aggelos Karalias : https://github.com/mehiel
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('el', {
         monthsNominativeEl : "Ιανουάριος_Φεβρουάριος_Μάρτιος_Απρίλιος_Μάιος_Ιούνιος_Ιούλιος_Αύγουστος_Σεπτέμβριος_Οκτώβριος_Νοέμβριος_Δεκέμβριος".split("_"),
         monthsGenitiveEl : "Ιανουαρίου_Φεβρουαρίου_Μαρτίου_Απριλίου_Μαΐου_Ιουνίου_Ιουλίου_Αυγούστου_Σεπτεμβρίου_Οκτωβρίου_Νοεμβρίου_Δεκεμβρίου".split("_"),
@@ -3310,9 +3309,9 @@
 // moment.js language configuration
 // language : australian english (en-au)
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('en-au', {
         months : "January_February_March_April_May_June_July_August_September_October_November_December".split("_"),
         monthsShort : "Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec".split("_"),
@@ -3367,9 +3366,9 @@
 // language : canadian english (en-ca)
 // author : Jonathan Abourbih : https://github.com/jonbca
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('en-ca', {
         months : "January_February_March_April_May_June_July_August_September_October_November_December".split("_"),
         monthsShort : "Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec".split("_"),
@@ -3420,9 +3419,9 @@
 // language : great britain english (en-gb)
 // author : Chris Gedrim : https://github.com/chrisgedrim
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('en-gb', {
         months : "January_February_March_April_May_June_July_August_September_October_November_December".split("_"),
         monthsShort : "Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec".split("_"),
@@ -3479,9 +3478,9 @@
 // komento: Mi estas malcerta se mi korekte traktis akuzativojn en tiu traduko.
 //          Se ne, bonvolu korekti kaj avizi min por ke mi povas lerni!
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('eo', {
         months : "januaro_februaro_marto_aprilo_majo_junio_julio_aŭgusto_septembro_oktobro_novembro_decembro".split("_"),
         monthsShort : "jan_feb_mar_apr_maj_jun_jul_aŭg_sep_okt_nov_dec".split("_"),
@@ -3536,9 +3535,9 @@
 // language : spanish (es)
 // author : Julio Napurí : https://github.com/julionc
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('es', {
         months : "enero_febrero_marzo_abril_mayo_junio_julio_agosto_septiembre_octubre_noviembre_diciembre".split("_"),
         monthsShort : "ene_feb_mar_abr_may_jun_jul_ago_sep_oct_nov_dic".split("_"),
@@ -3611,9 +3610,9 @@
 // author : Henry Kehlmann : https://github.com/madhenry
 // improvements : Illimar Tambek : https://github.com/ragulka
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     function processRelativeTime(number, withoutSuffix, key, isFuture) {
         var format = {
             's' : ['mõne sekundi', 'mõni sekund', 'paar sekundit'],
@@ -3680,9 +3679,9 @@
 // language : euskara (eu)
 // author : Eneko Illarramendi : https://github.com/eillarra
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('eu', {
         months : "urtarrila_otsaila_martxoa_apirila_maiatza_ekaina_uztaila_abuztua_iraila_urria_azaroa_abendua".split("_"),
         monthsShort : "urt._ots._mar._api._mai._eka._uzt._abu._ira._urr._aza._abe.".split("_"),
@@ -3734,9 +3733,9 @@
 // language : Persian Language
 // author : Ebrahim Byagowi : https://github.com/ebraminio
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     var symbolMap = {
         '1': '۱',
         '2': '۲',
@@ -3825,9 +3824,9 @@
 // language : finnish (fi)
 // author : Tarmo Aidantausta : https://github.com/bleadof
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     var numbers_past = 'nolla yksi kaksi kolme neljä viisi kuusi seitsemän kahdeksan yhdeksän'.split(' '),
         numbers_future = ['nolla', 'yhden', 'kahden', 'kolmen', 'neljän', 'viiden', 'kuuden',
                           numbers_past[7], numbers_past[8], numbers_past[9]];
@@ -3922,9 +3921,9 @@
 // language : faroese (fo)
 // author : Ragnar Johannesen : https://github.com/ragnar123
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('fo', {
         months : "januar_februar_mars_apríl_mai_juni_juli_august_september_oktober_november_desember".split("_"),
         monthsShort : "jan_feb_mar_apr_mai_jun_jul_aug_sep_okt_nov_des".split("_"),
@@ -3972,9 +3971,9 @@
 // language : canadian french (fr-ca)
 // author : Jonathan Abourbih : https://github.com/jonbca
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('fr-ca', {
         months : "janvier_février_mars_avril_mai_juin_juillet_août_septembre_octobre_novembre_décembre".split("_"),
         monthsShort : "janv._févr._mars_avr._mai_juin_juil._août_sept._oct._nov._déc.".split("_"),
@@ -4020,9 +4019,9 @@
 // language : french (fr)
 // author : John Fischer : https://github.com/jfroffice
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('fr', {
         months : "janvier_février_mars_avril_mai_juin_juillet_août_septembre_octobre_novembre_décembre".split("_"),
         monthsShort : "janv._févr._mars_avr._mai_juin_juil._août_sept._oct._nov._déc.".split("_"),
@@ -4072,9 +4071,9 @@
 // language : galician (gl)
 // author : Juan G. Hurtado : https://github.com/juanghurtado
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('gl', {
         months : "Xaneiro_Febreiro_Marzo_Abril_Maio_Xuño_Xullo_Agosto_Setembro_Outubro_Novembro_Decembro".split("_"),
         monthsShort : "Xan._Feb._Mar._Abr._Mai._Xuñ._Xul._Ago._Set._Out._Nov._Dec.".split("_"),
@@ -4139,9 +4138,9 @@
 // author : Moshe Simantov : https://github.com/DevelopmentIL
 // author : Tal Ater : https://github.com/TalAter
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('he', {
         months : "ינואר_פברואר_מרץ_אפריל_מאי_יוני_יולי_אוגוסט_ספטמבר_אוקטובר_נובמבר_דצמבר".split("_"),
         monthsShort : "ינו׳_פבר׳_מרץ_אפר׳_מאי_יוני_יולי_אוג׳_ספט׳_אוק׳_נוב׳_דצמ׳".split("_"),
@@ -4208,9 +4207,9 @@
 // language : hindi (hi)
 // author : Mayank Singhal : https://github.com/mayanksinghal
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     var symbolMap = {
         '1': '१',
         '2': '२',
@@ -4309,10 +4308,9 @@
 
 // based on (sl) translation by Robert Sedovšek
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
-
+}(this, function (moment) {
     function translate(number, withoutSuffix, key) {
         var result = number + " ";
         switch (key) {
@@ -4441,9 +4439,9 @@
 // language : hungarian (hu)
 // author : Adam Brunner : https://github.com/adambrunner
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     var weekEndings = 'vasárnap hétfőn kedden szerdán csütörtökön pénteken szombaton'.split(' ');
 
     function translate(number, withoutSuffix, key, isFuture) {
@@ -4534,9 +4532,9 @@
 // author : Mohammad Satrio Utomo : https://github.com/tyok
 // reference: http://id.wikisource.org/wiki/Pedoman_Umum_Ejaan_Bahasa_Indonesia_yang_Disempurnakan
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('id', {
         months : "Januari_Februari_Maret_April_Mei_Juni_Juli_Agustus_September_Oktober_November_Desember".split("_"),
         monthsShort : "Jan_Feb_Mar_Apr_Mei_Jun_Jul_Ags_Sep_Okt_Nov_Des".split("_"),
@@ -4594,9 +4592,9 @@
 // language : icelandic (is)
 // author : Hinrik Örn Sigurðsson : https://github.com/hinrik
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     function plural(n) {
         if (n % 100 === 11) {
             return true;
@@ -4713,10 +4711,9 @@
 // author : Lorenzo : https://github.com/aliem
 // author: Mattia Larentis: https://github.com/nostalgiaz
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
-    
+}(this, function (moment) {
     var monthsNominative = "Gennaio_Febbraio_Marzo_Aprile_Maggio_Giugno_Luglio_Agosto_Settembre_Ottobre_Novembre_Dicembre".split("_"),
         monthsSubjective = "gennaio_febbraio_marzo_aprile_maggio_giugno_luglio_agosto_settembre_ottobre_novembre_dicembre".split("_");
     
@@ -4789,9 +4786,9 @@
 // language : japanese (ja)
 // author : LI Long : https://github.com/baryon
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('ja', {
         months : "1月_2月_3月_4月_5月_6月_7月_8月_9月_10月_11月_12月".split("_"),
         monthsShort : "1月_2月_3月_4月_5月_6月_7月_8月_9月_10月_11月_12月".split("_"),
@@ -4841,10 +4838,9 @@
 // language : Georgian (ka)
 // author : Irakli Janiashvili : https://github.com/irakli-janiashvili
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
-
+}(this, function (moment) {
     function monthsCaseReplace(m, format) {
         var months = {
             'nominative': 'იანვარი_თებერვალი_მარტი_აპრილი_მაისი_ივნისი_ივლისი_აგვისტო_სექტემბერი_ოქტომბერი_ნოემბერი_დეკემბერი'.split('_'),
@@ -4943,9 +4939,9 @@
 // language : korean (ko)
 // author : Kyungwook, Park : https://github.com/kyungw00k
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('ko', {
         months : "1월_2월_3월_4월_5월_6월_7월_8월_9월_10월_11월_12월".split("_"),
         monthsShort : "1월_2월_3월_4월_5월_6월_7월_8월_9월_10월_11월_12월".split("_"),
@@ -4997,9 +4993,9 @@
 // deletion of the final "n" in certain contexts. That's what the "eifelerRegelAppliesToWeekday"
 // and "eifelerRegelAppliesToNumber" methods are meant for
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     function processRelativeTime(number, withoutSuffix, key, isFuture) {
         var format = {
             'm': ['eng Minutt', 'enger Minutt'],
@@ -5147,9 +5143,9 @@
 // language : Lithuanian (lt)
 // author : Mindaugas Mozūras : https://github.com/mmozuras
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     var units = {
         "m" : "minutė_minutės_minutę",
         "mm": "minutės_minučių_minutes",
@@ -5259,9 +5255,9 @@
 // language : latvian (lv)
 // author : Kristaps Karlsons : https://github.com/skakri
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     var units = {
         'mm': 'minūti_minūtes_minūte_minūtes',
         'hh': 'stundu_stundas_stunda_stundas',
@@ -5330,9 +5326,9 @@
 // language : malayalam (ml)
 // author : Floyd Pink : https://github.com/floydpink
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('ml', {
         months : 'ജനുവരി_ഫെബ്രുവരി_മാർച്ച്_ഏപ്രിൽ_മേയ്_ജൂൺ_ജൂലൈ_ഓഗസ്റ്റ്_സെപ്റ്റംബർ_ഒക്ടോബർ_നവംബർ_ഡിസംബർ'.split("_"),
         monthsShort : 'ജനു._ഫെബ്രു._മാർ._ഏപ്രി._മേയ്_ജൂൺ_ജൂലൈ._ഓഗ._സെപ്റ്റ._ഒക്ടോ._നവം._ഡിസം.'.split("_"),
@@ -5388,9 +5384,9 @@
 // language : Marathi (mr)
 // author : Harshad Kale : https://github.com/kalehv
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     var symbolMap = {
         '1': '१',
         '2': '२',
@@ -5486,9 +5482,9 @@
 // language : Bahasa Malaysia (ms-MY)
 // author : Weldan Jamili : https://github.com/weldan
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('ms-my', {
         months : "Januari_Februari_Mac_April_Mei_Jun_Julai_Ogos_September_Oktober_November_Disember".split("_"),
         monthsShort : "Jan_Feb_Mac_Apr_Mei_Jun_Jul_Ogs_Sep_Okt_Nov_Dis".split("_"),
@@ -5557,9 +5553,9 @@
 // authors : Espen Hovlandsdal : https://github.com/rexxars
 //           Sigurd Gartmann : https://github.com/sigurdga
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('nb', {
         months : "januar_februar_mars_april_mai_juni_juli_august_september_oktober_november_desember".split("_"),
         monthsShort : "jan._feb._mars_april_mai_juni_juli_aug._sep._okt._nov._des.".split("_"),
@@ -5607,9 +5603,9 @@
 // language : nepali/nepalese
 // author : suvash : https://github.com/suvash
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     var symbolMap = {
         '1': '१',
         '2': '२',
@@ -5706,9 +5702,9 @@
 // language : dutch (nl)
 // author : Joris Röling : https://github.com/jjupiter
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     var monthsShortWithDots = "jan._feb._mrt._apr._mei_jun._jul._aug._sep._okt._nov._dec.".split("_"),
         monthsShortWithoutDots = "jan_feb_mrt_apr_mei_jun_jul_aug_sep_okt_nov_dec".split("_");
 
@@ -5767,9 +5763,9 @@
 // language : norwegian nynorsk (nn)
 // author : https://github.com/mechuwind
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('nn', {
         months : "januar_februar_mars_april_mai_juni_juli_august_september_oktober_november_desember".split("_"),
         monthsShort : "jan._feb._mar._apr._mai._jun._jul._aug._sep._okt._nov._des.".split("_"),
@@ -5831,9 +5827,9 @@
 // language : polish (pl)
 // author : Rafal Hirsz : https://github.com/evoL
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     var monthsNominative = "styczeń_luty_marzec_kwiecień_maj_czerwiec_lipiec_sierpień_wrzesień_październik_listopad_grudzień".split("_"),
         monthsSubjective = "stycznia_lutego_marca_kwietnia_maja_czerwca_lipca_sierpnia_września_października_listopada_grudnia".split("_");
 
@@ -5937,9 +5933,9 @@
 // language : brazilian portuguese (pt-br)
 // author : Caio Ribeiro Pereira : https://github.com/caio-ribeiro-pereira
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('pt-br', {
         months : "janeiro_fevereiro_março_abril_maio_junho_julho_agosto_setembro_outubro_novembro_dezembro".split("_"),
         monthsShort : "jan_fev_mar_abr_mai_jun_jul_ago_set_out_nov_dez".split("_"),
@@ -6001,9 +5997,9 @@
 // language : portuguese (pt)
 // author : Jefferson : https://github.com/jalex79
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('pt', {
         months : "Janeiro_Fevereiro_Março_Abril_Maio_Junho_Julho_Agosto_Setembro_Outubro_Novembro_Dezembro".split("_"),
         monthsShort : "Jan_Fev_Mar_Abr_Mai_Jun_Jul_Ago_Set_Out_Nov_Dez".split("_"),
@@ -6056,9 +6052,9 @@
 // author : Vlad Gurdiga : https://github.com/gurdiga
 // author : Valentin Agachi : https://github.com/avaly
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     function relativeTimeWithPlural(number, withoutSuffix, key) {
         var format = {
             'mm': 'minute',
@@ -6136,10 +6132,9 @@
 // author : Limon Monte : https://github.com/limonte
 // based on (bs) translation by Nedim Cholich
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
-
+}(this, function (moment) {
     function translate(number, withoutSuffix, key) {
         var result = number + " ";
         switch (key) {
@@ -6269,9 +6264,9 @@
 // author : Viktorminator : https://github.com/Viktorminator
 // Author : Menelion Elensúle : https://github.com/Oire
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     function plural(word, num) {
         var forms = word.split('_');
         return num % 10 === 1 && num % 100 !== 11 ? forms[0] : (num % 10 >= 2 && num % 10 <= 4 && (num % 100 < 10 || num % 100 >= 20) ? forms[1] : forms[2]);
@@ -6299,7 +6294,7 @@
             'accusative': 'января_февраля_марта_апреля_мая_июня_июля_августа_сентября_октября_ноября_декабря'.split('_')
         },
 
-        nounCase = (/D[oD]?(\[[^\[\]]*\]|\s+)+MMMM?/).test(format) ?
+        nounCase = (/D[oD]?(\[[^\[\]]*\]|\s+)+MMMM?|D{1,2}? *MMMM?|MMMM? *D{1,3}?/).test(format) ?
             'accusative' :
             'nominative';
 
@@ -6312,7 +6307,7 @@
             'accusative': 'янв._февр._марта_апр._мая_июня_июля_авг._сент._окт._нояб._дек.'.split('_')
         },
 
-        nounCase = (/D[oD]?(\[[^\[\]]*\]|\s+)+MMMM?/).test(format) ?
+        nounCase = (/D[oD]?(\[[^\[\]]*\]|\s+)+MMMM?|MMM? *D[oD]?/).test(format) ?
             'accusative' :
             'nominative';
 
@@ -6440,9 +6435,9 @@
 // author : Martin Minka : https://github.com/k2s
 // based on work of petrbela : https://github.com/petrbela
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     var months = "január_február_marec_apríl_máj_jún_júl_august_september_október_november_december".split("_"),
         monthsShort = "jan_feb_mar_apr_máj_jún_júl_aug_sep_okt_nov_dec".split("_");
 
@@ -6589,9 +6584,9 @@
 // language : slovenian (sl)
 // author : Robert Sedovšek : https://github.com/sedovsek
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     function translate(number, withoutSuffix, key) {
         var result = number + " ";
         switch (key) {
@@ -6728,9 +6723,9 @@
 // author : Flakërim Ismani : https://github.com/flakerimi
 // author: Menelion Elensúle: https://github.com/Oire (tests)
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('sq', {
         months : "Janar_Shkurt_Mars_Prill_Maj_Qershor_Korrik_Gusht_Shtator_Tetor_Nëntor_Dhjetor".split("_"),
         monthsShort : "Jan_Shk_Mar_Pri_Maj_Qer_Kor_Gus_Sht_Tet_Nën_Dhj".split("_"),
@@ -6778,9 +6773,9 @@
 // language : swedish (sv)
 // author : Jens Alm : https://github.com/ulmus
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('sv', {
         months : "januari_februari_mars_april_maj_juni_juli_augusti_september_oktober_november_december".split("_"),
         monthsShort : "jan_feb_mar_apr_maj_jun_jul_aug_sep_okt_nov_dec".split("_"),
@@ -6835,9 +6830,9 @@
 // language : tamil (ta)
 // author : Arjunkumar Krishnamoorthy : https://github.com/tk120404
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     /*var symbolMap = {
             '1': '௧',
             '2': '௨',
@@ -6941,9 +6936,9 @@
 // language : thai (th)
 // author : Kridsada Thanabulpong : https://github.com/sirn
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('th', {
         months : "มกราคม_กุมภาพันธ์_มีนาคม_เมษายน_พฤษภาคม_มิถุนายน_กรกฎาคม_สิงหาคม_กันยายน_ตุลาคม_พฤศจิกายน_ธันวาคม".split("_"),
         monthsShort : "มกรา_กุมภา_มีนา_เมษา_พฤษภา_มิถุนา_กรกฎา_สิงหา_กันยา_ตุลา_พฤศจิกา_ธันวา".split("_"),
@@ -6993,9 +6988,9 @@
 // language : Tagalog/Filipino (tl-ph)
 // author : Dan Hagman
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('tl-ph', {
         months : "Enero_Pebrero_Marso_Abril_Mayo_Hunyo_Hulyo_Agosto_Setyembre_Oktubre_Nobyembre_Disyembre".split("_"),
         monthsShort : "Ene_Peb_Mar_Abr_May_Hun_Hul_Ago_Set_Okt_Nob_Dis".split("_"),
@@ -7046,10 +7041,9 @@
 // authors : Erhan Gundogan : https://github.com/erhangundogan,
 //           Burak Yiğit Kaya: https://github.com/BYK
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
-
+}(this, function (moment) {
     var suffixes = {
         1: "'inci",
         5: "'inci",
@@ -7132,9 +7126,9 @@
 // language : Morocco Central Atlas Tamaziɣt in Latin (tzm-la)
 // author : Abdel Said : https://github.com/abdelsaid
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('tzm-la', {
         months : "innayr_brˤayrˤ_marˤsˤ_ibrir_mayyw_ywnyw_ywlywz_ɣwšt_šwtanbir_ktˤwbrˤ_nwwanbir_dwjnbir".split("_"),
         monthsShort : "innayr_brˤayrˤ_marˤsˤ_ibrir_mayyw_ywnyw_ywlywz_ɣwšt_šwtanbir_ktˤwbrˤ_nwwanbir_dwjnbir".split("_"),
@@ -7181,9 +7175,9 @@
 // language : Morocco Central Atlas Tamaziɣt (tzm)
 // author : Abdel Said : https://github.com/abdelsaid
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('tzm', {
         months : "ⵉⵏⵏⴰⵢⵔ_ⴱⵕⴰⵢⵕ_ⵎⴰⵕⵚ_ⵉⴱⵔⵉⵔ_ⵎⴰⵢⵢⵓ_ⵢⵓⵏⵢⵓ_ⵢⵓⵍⵢⵓⵣ_ⵖⵓⵛⵜ_ⵛⵓⵜⴰⵏⴱⵉⵔ_ⴽⵟⵓⴱⵕ_ⵏⵓⵡⴰⵏⴱⵉⵔ_ⴷⵓⵊⵏⴱⵉⵔ".split("_"),
         monthsShort : "ⵉⵏⵏⴰⵢⵔ_ⴱⵕⴰⵢⵕ_ⵎⴰⵕⵚ_ⵉⴱⵔⵉⵔ_ⵎⴰⵢⵢⵓ_ⵢⵓⵏⵢⵓ_ⵢⵓⵍⵢⵓⵣ_ⵖⵓⵛⵜ_ⵛⵓⵜⴰⵏⴱⵉⵔ_ⴽⵟⵓⴱⵕ_ⵏⵓⵡⴰⵏⴱⵉⵔ_ⴷⵓⵊⵏⴱⵉⵔ".split("_"),
@@ -7231,9 +7225,9 @@
 // author : zemlanin : https://github.com/zemlanin
 // Author : Menelion Elensúle : https://github.com/Oire
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     function plural(word, num) {
         var forms = word.split('_');
         return num % 10 === 1 && num % 100 !== 11 ? forms[0] : (num % 10 >= 2 && num % 10 <= 4 && (num % 100 < 10 || num % 100 >= 20) ? forms[1] : forms[2]);
@@ -7381,9 +7375,9 @@
 // language : uzbek
 // author : Sardor Muminov : https://github.com/muminoff
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('uz', {
         months : "январь_февраль_март_апрель_май_июнь_июль_август_сентябрь_октябрь_ноябрь_декабрь".split("_"),
         monthsShort : "янв_фев_мар_апр_май_июн_июл_авг_сен_окт_ноя_дек".split("_"),
@@ -7430,9 +7424,9 @@
 // language : vietnamese (vn)
 // author : Bang Nguyen : https://github.com/bangnk
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('vn', {
         months : "tháng 1_tháng 2_tháng 3_tháng 4_tháng 5_tháng 6_tháng 7_tháng 8_tháng 9_tháng 10_tháng 11_tháng 12".split("_"),
         monthsShort : "Th01_Th02_Th03_Th04_Th05_Th06_Th07_Th08_Th09_Th10_Th11_Th12".split("_"),
@@ -7487,9 +7481,9 @@
 // author : suupic : https://github.com/suupic
 // author : Zeno Zeng : https://github.com/zenozeng
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('zh-cn', {
         months : "一月_二月_三月_四月_五月_六月_七月_八月_九月_十月_十一月_十二月".split("_"),
         monthsShort : "1月_2月_3月_4月_5月_6月_7月_8月_9月_10月_11月_12月".split("_"),
@@ -7588,9 +7582,9 @@
 // language : traditional chinese (zh-tw)
 // author : Ben : https://github.com/ben-lin
 
-(function (factory) {
+(function (root, factory) {
     factory(moment);
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('zh-tw', {
         months : "一月_二月_三月_四月_五月_六月_七月_八月_九月_十月_十一月_十二月".split("_"),
         monthsShort : "1月_2月_3月_4月_5月_6月_7月_8月_9月_10月_11月_12月".split("_"),
