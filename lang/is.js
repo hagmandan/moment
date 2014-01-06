@@ -2,15 +2,15 @@
 // language : icelandic (is)
 // author : Hinrik Örn Sigurðsson : https://github.com/hinrik
 
-(function (factory) {
-    if (typeof define === 'function' && define.amd) {
+(function (root, factory) {
+    if (root['moment']) {
+        factory(root['moment']);//global or window
+    } else if (typeof define === 'function' && define.amd) {
         define(['moment'], factory); // AMD
     } else if (typeof exports === 'object') {
         module.exports = factory(require('../moment')); // Node
-    } else {
-        factory(window.moment); // Browser global
     }
-}(function (moment) {
+}(this, function (moment) {
     function plural(n) {
         if (n % 100 === 11) {
             return true;

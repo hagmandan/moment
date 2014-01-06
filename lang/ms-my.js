@@ -2,15 +2,15 @@
 // language : Bahasa Malaysia (ms-MY)
 // author : Weldan Jamili : https://github.com/weldan
 
-(function (factory) {
-    if (typeof define === 'function' && define.amd) {
+(function (root, factory) {
+    if (root['moment']) {
+        factory(root['moment']);//global or window
+    } else if (typeof define === 'function' && define.amd) {
         define(['moment'], factory); // AMD
     } else if (typeof exports === 'object') {
         module.exports = factory(require('../moment')); // Node
-    } else {
-        factory(window.moment); // Browser global
     }
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('ms-my', {
         months : "Januari_Februari_Mac_April_Mei_Jun_Julai_Ogos_September_Oktober_November_Disember".split("_"),
         monthsShort : "Jan_Feb_Mac_Apr_Mei_Jun_Jul_Ogs_Sep_Okt_Nov_Dis".split("_"),

@@ -3,16 +3,15 @@
 // author : Lorenzo : https://github.com/aliem
 // author: Mattia Larentis: https://github.com/nostalgiaz
 
-(function (factory) {
-    if (typeof define === 'function' && define.amd) {
+(function (root, factory) {
+    if (root['moment']) {
+        factory(root['moment']);//global or window
+    } else if (typeof define === 'function' && define.amd) {
         define(['moment'], factory); // AMD
     } else if (typeof exports === 'object') {
         module.exports = factory(require('../moment')); // Node
-    } else {
-        factory(window.moment); // Browser global
     }
-}(function (moment) {
-    
+}(this, function (moment) {
     var monthsNominative = "Gennaio_Febbraio_Marzo_Aprile_Maggio_Giugno_Luglio_Agosto_Settembre_Ottobre_Novembre_Dicembre".split("_"),
         monthsSubjective = "gennaio_febbraio_marzo_aprile_maggio_giugno_luglio_agosto_settembre_ottobre_novembre_dicembre".split("_");
     

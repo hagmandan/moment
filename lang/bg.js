@@ -2,15 +2,15 @@
 // language : bulgarian (bg)
 // author : Krasen Borisov : https://github.com/kraz
 
-(function (factory) {
-    if (typeof define === 'function' && define.amd) {
+(function (root, factory) {
+    if (root['moment']) {
+        factory(root['moment']);//global or window
+    } else if (typeof define === 'function' && define.amd) {
         define(['moment'], factory); // AMD
     } else if (typeof exports === 'object') {
         module.exports = factory(require('../moment')); // Node
-    } else {
-        factory(window.moment); // Browser global
     }
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('bg', {
         months : "януари_февруари_март_април_май_юни_юли_август_септември_октомври_ноември_декември".split("_"),
         monthsShort : "янр_фев_мар_апр_май_юни_юли_авг_сеп_окт_ное_дек".split("_"),

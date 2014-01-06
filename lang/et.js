@@ -3,15 +3,15 @@
 // author : Henry Kehlmann : https://github.com/madhenry
 // improvements : Illimar Tambek : https://github.com/ragulka
 
-(function (factory) {
-    if (typeof define === 'function' && define.amd) {
+(function (root, factory) {
+    if (root['moment']) {
+        factory(root['moment']);//global or window
+    } else if (typeof define === 'function' && define.amd) {
         define(['moment'], factory); // AMD
     } else if (typeof exports === 'object') {
         module.exports = factory(require('../moment')); // Node
-    } else {
-        factory(window.moment); // Browser global
     }
-}(function (moment) {
+}(this, function (moment) {
     function processRelativeTime(number, withoutSuffix, key, isFuture) {
         var format = {
             's' : ['mõne sekundi', 'mõni sekund', 'paar sekundit'],

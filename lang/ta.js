@@ -2,15 +2,15 @@
 // language : tamil (ta)
 // author : Arjunkumar Krishnamoorthy : https://github.com/tk120404
 
-(function (factory) {
-    if (typeof define === 'function' && define.amd) {
+(function (root, factory) {
+    if (root['moment']) {
+        factory(root['moment']);//global or window
+    } else if (typeof define === 'function' && define.amd) {
         define(['moment'], factory); // AMD
     } else if (typeof exports === 'object') {
         module.exports = factory(require('../moment')); // Node
-    } else {
-        factory(window.moment); // Browser global
     }
-}(function (moment) {
+}(this, function (moment) {
     /*var symbolMap = {
             '1': '௧',
             '2': '௨',

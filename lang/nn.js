@@ -2,15 +2,15 @@
 // language : norwegian nynorsk (nn)
 // author : https://github.com/mechuwind
 
-(function (factory) {
-    if (typeof define === 'function' && define.amd) {
+(function (root, factory) {
+    if (root['moment']) {
+        factory(root['moment']);//global or window
+    } else if (typeof define === 'function' && define.amd) {
         define(['moment'], factory); // AMD
     } else if (typeof exports === 'object') {
         module.exports = factory(require('../moment')); // Node
-    } else {
-        factory(window.moment); // Browser global
     }
-}(function (moment) {
+}(this, function (moment) {
     return moment.lang('nn', {
         months : "januar_februar_mars_april_mai_juni_juli_august_september_oktober_november_desember".split("_"),
         monthsShort : "jan._feb._mar._apr._mai._jun._jul._aug._sep._okt._nov._des.".split("_"),

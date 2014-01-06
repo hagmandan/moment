@@ -3,15 +3,15 @@
 // author : Viktorminator : https://github.com/Viktorminator
 // Author : Menelion Elensúle : https://github.com/Oire
 
-(function (factory) {
-    if (typeof define === 'function' && define.amd) {
+(function (root, factory) {
+    if (root['moment']) {
+        factory(root['moment']);//global or window
+    } else if (typeof define === 'function' && define.amd) {
         define(['moment'], factory); // AMD
     } else if (typeof exports === 'object') {
         module.exports = factory(require('../moment')); // Node
-    } else {
-        factory(window.moment); // Browser global
     }
-}(function (moment) {
+}(this, function (moment) {
     function plural(word, num) {
         var forms = word.split('_');
         return num % 10 === 1 && num % 100 !== 11 ? forms[0] : (num % 10 >= 2 && num % 10 <= 4 && (num % 100 < 10 || num % 100 >= 20) ? forms[1] : forms[2]);
@@ -39,7 +39,7 @@
             'accusative': 'января_февраля_марта_апреля_мая_июня_июля_августа_сентября_октября_ноября_декабря'.split('_')
         },
 
-        nounCase = (/D[oD]?(\[[^\[\]]*\]|\s+)+MMMM?/).test(format) ?
+        nounCase = (/D[oD]?(\[[^\[\]]*\]|\s+)+MMMM?|D{1,2}? *MMMM?|MMMM? *D{1,3}?/).test(format) ?
             'accusative' :
             'nominative';
 
@@ -52,7 +52,7 @@
             'accusative': 'янв._февр._марта_апр._мая_июня_июля_авг._сент._окт._нояб._дек.'.split('_')
         },
 
-        nounCase = (/D[oD]?(\[[^\[\]]*\]|\s+)+MMMM?/).test(format) ?
+        nounCase = (/D[oD]?(\[[^\[\]]*\]|\s+)+MMMM?|MMM? *D[oD]?/).test(format) ?
             'accusative' :
             'nominative';
 

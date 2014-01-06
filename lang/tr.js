@@ -3,16 +3,15 @@
 // authors : Erhan Gundogan : https://github.com/erhangundogan,
 //           Burak Yiğit Kaya: https://github.com/BYK
 
-(function (factory) {
-    if (typeof define === 'function' && define.amd) {
+(function (root, factory) {
+    if (root['moment']) {
+        factory(root['moment']);//global or window
+    } else if (typeof define === 'function' && define.amd) {
         define(['moment'], factory); // AMD
     } else if (typeof exports === 'object') {
         module.exports = factory(require('../moment')); // Node
-    } else {
-        factory(window.moment); // Browser global
     }
-}(function (moment) {
-
+}(this, function (moment) {
     var suffixes = {
         1: "'inci",
         5: "'inci",
